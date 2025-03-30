@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Open Runde';
+  src: local('Open Runde'), local('OpenRunde-Regular');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Runde';
+  src: local('Open Runde Medium'), local('OpenRunde-Medium');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Runde';
+  src: local('Open Runde SemiBold'), local('OpenRunde-SemiBold');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Runde';
+  src: local('Open Runde Bold'), local('OpenRunde-Bold');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: 'Open Runde', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Glass effect for cards and containers */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* Hover lift effect for interactive elements */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Text gradient effect */
+.gradient-text {
+  background: linear-gradient(to right, #111827, #4B5563);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Transitions */
+.page-transition {
+  animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Feature box gradients */
+.gradient-blue-yellow {
+  background: linear-gradient(135deg, #7CC4E4 0%, #FFDE59 100%);
+  border: none !important;
+}
+
+.gradient-blue-purple {
+  background: linear-gradient(135deg, #56CCF2 0%, #9B51E0 100%);
+  border: none !important;
+}
+
+.gradient-orange-pink {
+  background: linear-gradient(135deg, #FF8C37 0%, #F24976 100%);
+  border: none !important;
+}
+
+/* Make text more readable on gradient backgrounds */
+.gradient-box {
+  position: relative;
+}
+
+.gradient-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.gradient-box > * {
+  position: relative;
+  z-index: 1;
+} 
