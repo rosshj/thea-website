@@ -1,95 +1,122 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function BlogPost() {
   return (
-    <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div className="relative h-96 mb-12 rounded-lg overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1520549233664-03f65c1d1327?q=80&w=2000&auto=format&fit=crop"
-          alt="Professional photography studio setup"
-          fill
-          className="object-cover"
-        />
-      </div>
-      
-      <header className="mb-12">
-        <div className="flex items-center text-sm text-gray-500 mb-4">
-          <span>March 10, 2024</span>
-          <span className="mx-2">•</span>
-          <span>10 min read</span>
+    <div>
+      {/* Full width hero section with the same width constraint as CTA */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 mb-16">
+        <div className="relative h-[70vh] rounded-3xl overflow-hidden">
+          <Image
+            src="/images/blog/studio-portrait-setup.jpg"
+            alt="Studio portrait session with softbox lighting creating dramatic shadows"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 p-8">
+            <div className="flex items-center text-sm text-gray-200 mb-4">
+              <span>March 10, 2024</span>
+              <span className="mx-2">•</span>
+              <span>10 min read</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Studio Photography: Mastering Spot Metering</h1>
+            <p className="text-xl text-gray-200">Control your light. Nail your exposure. One spot at a time.</p>
+          </div>
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Studio Photography: Mastering Spot Metering</h1>
-        <div className="flex items-center">
-          <span className="text-gray-600">By Sarah Johnson</span>
-        </div>
-      </header>
-
-      <div className="prose prose-lg max-w-none">
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">The Importance of Precise Metering</h2>
-          <p className="text-gray-700 mb-6">
-            In studio photography, precise light metering is crucial for achieving consistent, professional results. Spot metering provides the accuracy needed to capture perfect exposures in controlled lighting environments. The ability to measure light with pinpoint accuracy becomes especially valuable when working with multiple light sources and complex lighting setups.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Setting Up Your Studio</h2>
-          <p className="text-gray-700 mb-6">
-            A successful studio photography session begins with proper lighting setup. Start by positioning your main light, often called the key light, at a 45-degree angle to your subject. This creates dimensional lighting that brings out the form and texture of your subject. The fill light should be positioned to complement the key light, helping to reduce shadows and control contrast in your images.
-          </p>
-          <p className="text-gray-700 mb-6">
-            To add depth and separation to your images, consider incorporating a hair light or rim light. This additional light source, when properly positioned, creates a subtle highlight around your subject, helping them stand out from the background. Finally, shape and control your light using modifiers such as softboxes, umbrellas, or beauty dishes. These tools help you craft the exact quality of light you're seeking, from soft and flattering to dramatic and contrasty.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Key Areas to Meter</h2>
-          <p className="text-gray-700 mb-6">
-            When working in a studio environment, certain areas require particular attention when spot metering. The subject's face, especially the cheek area in portraits, serves as a crucial reference point for establishing your base exposure. This area typically should be exposed to render natural skin tones. Pay special attention to the highlights in your scene, as they can easily become overexposed and lose detail.
-          </p>
-          <p className="text-gray-700 mb-6">
-            Shadow areas deserve equal consideration, as maintaining detail in these darker regions contributes to the overall depth of your image. Take time to meter your background separately, ensuring proper separation between your subject and their surroundings. This attention to detail in metering helps create images with proper depth and dimensionality.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Understanding Light Ratios</h2>
-          <p className="text-gray-700 mb-6">
-            Light ratios form the foundation of studio lighting control. The relationship between your key light and fill light typically follows established ratios, with 2:1 or 3:1 being common choices for standard portraiture. These ratios create natural-looking dimension while maintaining detail in shadow areas. The difference in exposure between your main subject and the background usually spans 1-2 stops, creating separation without the background becoming too dark or distracting.
-          </p>
-          <p className="text-gray-700 mb-6">
-            Careful attention to highlights and shadows ensures your images retain detail throughout their tonal range. By measuring these areas independently, you can maintain the perfect balance between light and shadow, creating images with depth and dimension while avoiding problematic overexposure or blocked-up shadows.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Using Thea in the Studio</h2>
-          <p className="text-gray-700 mb-6">
-            Thea's advanced spot metering capabilities make it an invaluable tool in the studio environment. The precise 1° measuring angle allows for incredibly accurate readings of specific areas in your scene. As you work, the real-time exposure feedback helps you understand exactly how your adjustments affect different parts of the image. This immediate feedback loop accelerates the learning process and helps you make more informed decisions about your lighting.
-          </p>
-          <p className="text-gray-700 mb-6">
-            The ability to easily compare readings from different areas of your scene helps maintain consistent ratios between light sources. Additionally, Thea's preset system allows you to save and recall successful lighting setups, streamlining your workflow and ensuring consistency across multiple sessions.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Troubleshooting Common Issues</h2>
-          <p className="text-gray-700 mb-6">
-            Even in a controlled studio environment, several factors can affect your metering accuracy. The position and distance of your light modifiers can significantly impact your readings, so pay attention to their placement and angle relative to your subject. Power settings on your strobes need regular verification, as they can drift or be accidentally bumped between shots.
-          </p>
-          <p className="text-gray-700 mb-6">
-            Ambient light interference can be particularly troublesome in studios with windows or mixed lighting. Take time to identify and control any unwanted light sources. Finally, double-check your camera settings, including ISO, aperture, and shutter speed, as these fundamental exposure controls work in concert with your lighting setup to create the final image.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Conclusion</h2>
-          <p className="text-gray-700">
-            Mastering spot metering in the studio takes practice, but the results are worth the effort. With tools like Thea and a solid understanding of light measurement, you'll be able to achieve consistent, professional-quality results in your studio work. Remember that each session is an opportunity to refine your technique and deepen your understanding of light control.
-          </p>
-        </section>
       </div>
-    </article>
+
+      {/* Content section with readable width */}
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="prose prose-lg max-w-none">
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Studio Photography Demands Precision</h2>
+            <p className="text-gray-700 mb-6">
+              Shooting in a studio gives you complete control over lighting, which is one of the reasons it's so popular. You can shape shadows, highlight textures, and create just the mood you want. But with that control comes responsibility—your exposure has to be spot-on.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Unlike natural light situations, where the environment can help fill in shadows or create even exposure, studio lighting is often more dramatic and directional. One side of the subject might be fully lit while the other falls into deep shadow. That means average or automatic metering modes can struggle, often giving you exposure that's off by a stop or more.
+            </p>
+            <p className="text-gray-700 mb-6">
+              This is where spot metering becomes an essential part of your workflow.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">What Spot Metering Does in the Studio</h2>
+            <p className="text-gray-700 mb-6">
+              Spot metering allows you to tell your camera—or your light meter—exactly what part of your scene you want to expose correctly. That might be a model's cheekbone, a highlight on a product, or the edge of a backlit fabric.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Instead of averaging the light across the entire frame, you're saying: "I want this part to be right—ignore the rest."
+            </p>
+            <p className="text-gray-700 mb-6">
+              This is especially useful for:
+            </p>
+            <ul className="list-disc pl-8 mb-6 text-gray-700">
+              <li>Portraits with dramatic lighting (like Rembrandt or split light)</li>
+              <li>Product photography where highlights and shadows matter</li>
+              <li>Scenes with bright backdrops or reflective surfaces</li>
+            </ul>
+            <p className="text-gray-700 mb-6">
+              It also lets you maintain consistency across shots. Once you find the exposure that works for your subject under your lighting setup, you can meter that exact same spot for every frame—so your results don't vary from shot to shot.
+            </p>
+            
+            <div className="relative h-96 my-10 rounded-lg overflow-hidden">
+              <Image
+                src="/images/blog/dramatic-portrait.jpg"
+                alt="Black and white portrait of a man in a hat with dramatic lighting"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white text-sm">
+                Spot metering lets you expose for the light you've carefully crafted in the studio.
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Spot Metering vs. Incident Light Meters</h2>
+            <p className="text-gray-700 mb-6">
+              Many studio photographers use handheld incident light meters, which measure the light falling on a subject rather than the light reflected from it. These meters are great—but they're not the only way.
+            </p>
+            <p className="text-gray-700 mb-6">
+              If you don't have a handheld meter (or don't want to carry one), spot metering gives you a simple, accessible alternative. By metering off a carefully chosen point on your subject—like a midtone on the skin or fabric—you can achieve a similar result, especially if you understand how tones affect your meter reading.
+            </p>
+            <p className="text-gray-700 mb-6">
+              The key is to know how the subject you're metering compares to a midtone. If it's lighter, you'll need to increase exposure slightly. If it's darker, you may need to reduce it. With a little practice, this becomes second nature.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Final Thoughts</h2>
+            <p className="text-gray-700 mb-6">
+              In the studio, the lighting is in your hands—but exposure still takes precision. Spot metering gives you the accuracy you need to bring your vision to life. It helps you meter intentionally, expose consistently, and get the most out of the lighting you've worked hard to set up.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Whether you're shooting fashion, products, or portraits, learning to use spot metering can elevate your work—giving you more creative control and fewer exposure surprises when you load your film or review your files.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">How Thea Makes It Easy</h2>
+            <p className="text-gray-700 mb-6">
+              If you're looking for a simple, reliable way to meter in your studio, Thea is a great tool to keep in your pocket. Built for iPhone, Thea gives you accurate spot metering using your phone's camera, with real-time readings that reflect the light in your scene.
+            </p>
+            <p className="text-gray-700 mb-6">
+              You can point your phone directly at your subject, choose your preferred metering mode (aperture priority, shutter priority, or manual), and tap to lock the reading. This makes it easy to check different parts of the setup—from highlights to shadows—and get consistent results throughout your shoot.
+            </p>
+            <p className="text-gray-700 mb-6">
+              For film photographers, Thea lets you set a fixed ISO and limit your shutter speed or aperture based on your gear. It's especially handy if you're shooting with cameras that don't have built-in meters or you just want a fast way to double-check your light.
+            </p>
+            <p className="text-gray-700 mb-6">
+              The best part? It's free, easy to use, and designed to help you learn as you go—no extra gear or complex settings needed.
+            </p>
+          </section>
+        </div>
+      </article>
+    </div>
   );
 } 

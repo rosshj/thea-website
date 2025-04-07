@@ -1,105 +1,168 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function BlogPost() {
   return (
-    <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div className="relative h-96 mb-12 rounded-lg overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1610448721566-47369c768e70?q=80&w=2000&auto=format&fit=crop"
-          alt="Camera settings dials showing aperture and shutter speed"
-          fill
-          className="object-cover"
-        />
-      </div>
-      
-      <header className="mb-12">
-        <div className="flex items-center text-sm text-gray-500 mb-4">
-          <span>March 5, 2024</span>
-          <span className="mx-2">•</span>
-          <span>7 min read</span>
+    <div>
+      {/* Full width hero section with the same width constraint as CTA */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 mb-16">
+        <div className="relative h-[70vh] rounded-3xl overflow-hidden">
+          <Image
+            src="/images/blog/exposure-triangle-diagram.jpg"
+            alt="Camera settings showing aperture, shutter speed and ISO controls"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 p-8">
+            <div className="flex items-center text-sm text-gray-200 mb-4">
+              <span>March 5, 2024</span>
+              <span className="mx-2">•</span>
+              <span>7 min read</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">The Photography Exposure Triangle Explained</h1>
+            <p className="text-xl text-gray-200">How aperture, shutter speed, and ISO work together—and how to get the balance right.</p>
+          </div>
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">The Photography Exposure Triangle Explained</h1>
-        <div className="flex items-center">
-          <span className="text-gray-600">By Mike Wilson</span>
-        </div>
-      </header>
-
-      <div className="prose prose-lg max-w-none">
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Understanding the Exposure Triangle</h2>
-          <p className="text-gray-700 mb-6">
-            The exposure triangle is the foundation of photography. It consists of three elements that work together to create a properly exposed image: aperture, shutter speed, and ISO. Understanding how these elements interact is crucial for taking control of your photography. Each element not only affects exposure but also brings its own creative possibilities to your images.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Aperture: Controlling Light and Depth</h2>
-          <p className="text-gray-700 mb-6">
-            Aperture refers to the opening in your lens that lets light through to your camera's sensor. It's measured in f-stops, and understanding its dual nature is key to mastering exposure. Wider apertures, denoted by lower f-numbers like f/1.8, allow more light to reach your sensor while creating a shallow depth of field. This creates the beautiful background blur that many photographers desire for portraits and detail shots.
-          </p>
-          <p className="text-gray-700 mb-6">
-            Conversely, smaller apertures, indicated by higher f-numbers like f/16, restrict the amount of light but increase depth of field, keeping more of your scene in focus. This makes them ideal for landscape photography where you want everything sharp from foreground to background. Each full stop change in aperture either halves or doubles the amount of light, giving you precise control over your exposure.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Shutter Speed: Controlling Motion</h2>
-          <p className="text-gray-700 mb-6">
-            Shutter speed determines how long your sensor is exposed to light, and it's your primary tool for controlling motion in your images. Fast shutter speeds, such as 1/1000th of a second, freeze action but require more light or higher ISO settings to achieve proper exposure. These speeds are essential for sports photography or capturing fast-moving subjects without blur.
-          </p>
-          <p className="text-gray-700 mb-6">
-            Slower shutter speeds, like 1/30th of a second or longer, allow more light to reach your sensor but may introduce motion blur if either the camera or subject moves during exposure. This can be used creatively to show movement in your images, such as flowing water or light trails. As a general rule, when shooting handheld, try to keep your shutter speed at least as fast as the reciprocal of your lens's focal length to avoid camera shake.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">ISO: Controlling Light Sensitivity</h2>
-          <p className="text-gray-700 mb-6">
-            ISO determines your camera sensor's sensitivity to light, and it's often the final element photographers adjust after setting their desired aperture and shutter speed. Lower ISO values, such as 100, produce the cleanest images with minimal noise but require more light to achieve proper exposure. This makes low ISO settings ideal for bright conditions or when using a tripod to allow longer exposures.
-          </p>
-          <p className="text-gray-700 mb-6">
-            Higher ISO settings, like 3200 or above, allow you to shoot in darker conditions or maintain faster shutter speeds, but at the cost of increased noise in your images. Modern cameras handle high ISO better than ever, but it's still best to use the lowest ISO possible for your shooting conditions. Your camera's base ISO typically offers the best image quality and should be your starting point when possible.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Balancing the Triangle</h2>
-          <p className="text-gray-700 mb-6">
-            The key to mastering exposure lies in understanding how these three elements work together. When you adjust one element, you often need to compensate by changing another to maintain the same exposure. For example, if you want a faster shutter speed to freeze motion, you'll need to either widen your aperture or increase your ISO to compensate for the reduced light.
-          </p>
-          <p className="text-gray-700 mb-6">
-            Different combinations of these settings can achieve the same exposure while creating different creative effects. For instance, you might choose a wide aperture and fast shutter speed for a portrait with a blurred background, or a small aperture and slower shutter speed for a landscape with everything in focus. The specific requirements of your scene and your creative vision will guide which combination works best.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Common Scenarios and Settings</h2>
-          <p className="text-gray-700 mb-6">
-            Different types of photography often call for different approaches to exposure. In landscape photography, photographers typically opt for small apertures (f/11-f/16) combined with low ISO settings and slower shutter speeds, often using a tripod to ensure sharpness. Sports photographers, on the other hand, prioritize fast shutter speeds (1/500s or faster) and may need to use wider apertures and higher ISO settings to freeze action in challenging light.
-          </p>
-          <p className="text-gray-700 mb-6">
-            Portrait photographers often gravitate toward wide apertures (f/1.8-f/4) to create pleasing background blur, using moderate ISO settings and appropriate shutter speeds to maintain sharpness. Night photography presents its own challenges, typically requiring a combination of wide apertures, high ISO settings, and slow shutter speeds, often with some form of stabilization to capture enough light while maintaining image quality.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Using Thea to Perfect Your Exposure</h2>
-          <p className="text-gray-700 mb-6">
-            Thea's sophisticated light metering capabilities serve as an invaluable tool in mastering exposure. The app provides accurate light readings that help inform your exposure settings, while its real-time feedback system allows you to see immediately how adjustments to any part of the exposure triangle affect your image. This immediate feedback loop accelerates the learning process and helps you develop an intuitive understanding of exposure.
-          </p>
-          <p className="text-gray-700 mb-6">
-            Beyond basic exposure readings, Thea helps you understand the relationships between different exposure elements, making it easier to achieve your creative vision. The ability to save preferred exposure combinations as presets streamlines your workflow, allowing you to quickly recall successful settings for similar shooting situations in the future.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Conclusion</h2>
-          <p className="text-gray-700">
-            Understanding the exposure triangle is essential for taking control of your photography. While it may seem complex at first, with practice and the right tools like Thea, you'll be able to make quick, intuitive decisions to achieve the perfect exposure for any situation. Remember that mastering exposure is a journey of continuous learning and experimentation, where each shooting session provides new opportunities to refine your skills and creative vision.
-          </p>
-        </section>
       </div>
-    </article>
+
+      {/* Content section with readable width */}
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="prose prose-lg max-w-none">
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">What is the Exposure Triangle?</h2>
+            <p className="text-gray-700 mb-6">
+              If you're just getting started with photography, you've probably heard the term "exposure triangle." It's the foundation of how cameras work—and it's not as complicated as it sounds.
+            </p>
+            <p className="text-gray-700 mb-6">
+              The exposure triangle is made up of three settings that control how bright or dark your photo will be:
+            </p>
+            <ul className="list-disc pl-8 mb-6 text-gray-700">
+              <li>Aperture – how wide your lens opens</li>
+              <li>Shutter Speed – how long your camera's sensor (or film) is exposed to light</li>
+              <li>ISO – how sensitive your sensor or film is to light</li>
+            </ul>
+            <p className="text-gray-700 mb-6">
+              All three are connected. Change one, and it affects the others. That's why it's called a triangle—there's a balance involved.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Why It Matters</h2>
+            <p className="text-gray-700 mb-6">
+              Understanding the exposure triangle helps you take control of your photos, rather than leaving everything up to auto mode. It lets you:
+            </p>
+            <ul className="list-disc pl-8 mb-6 text-gray-700">
+              <li>Choose whether your photo is sharp or has motion blur</li>
+              <li>Control how much of your scene is in focus (depth of field)</li>
+              <li>Get the right brightness without sacrificing image quality</li>
+            </ul>
+            <p className="text-gray-700 mb-6">
+              Once you understand how these three settings interact, you can use them creatively instead of just technically.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Aperture: Controlling Depth of Field</h2>
+            <p className="text-gray-700 mb-6">
+              Aperture refers to how wide the lens opens when taking a photo. It's measured in f-stops like f/2.8, f/5.6, or f/11.
+            </p>
+            <p className="text-gray-700 mb-6">
+              A wider aperture (like f/1.8 or f/2.8) lets in more light and gives you a shallower depth of field, meaning only part of the image is in focus. This is great for portraits where you want a blurry background.
+            </p>
+            <p className="text-gray-700 mb-6">
+              A narrower aperture (like f/8 or f/16) lets in less light but gives you more depth of field, so more of the image appears sharp—useful for landscapes or product photography.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Shutter Speed: Capturing Motion</h2>
+            <p className="text-gray-700 mb-6">
+              Shutter speed controls how long your camera's sensor or film is exposed to light. It's measured in seconds or fractions of a second—like 1/1000 (very fast) or 1/30 (slower).
+            </p>
+            <p className="text-gray-700 mb-6">
+              A fast shutter speed (like 1/1000) freezes motion—great for sports, wildlife, or fast-moving subjects.
+            </p>
+            <p className="text-gray-700 mb-6">
+              A slower shutter speed (like 1/10 or 1 second) lets in more light but can create motion blur. You might use this for artistic shots, low-light scenes, or to capture movement like waterfalls or car trails.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">ISO: Adjusting Light Sensitivity</h2>
+            <p className="text-gray-700 mb-6">
+              ISO measures how sensitive your sensor (or film) is to light. Lower numbers like ISO 100 or 200 are less sensitive, while higher numbers like ISO 1600 or 3200 are more sensitive.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Use low ISO when there's plenty of light—your images will be cleaner with less grain or noise.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Use higher ISO in darker settings when you need to brighten things up—but expect some added grain, especially with digital sensors.
+            </p>
+            <p className="text-gray-700 mb-6">
+              With film, ISO is set by the roll you're using (like ISO 400 film), so you'll want to meter your light based on that fixed number.
+            </p>
+            
+            <div className="relative h-96 my-10 rounded-lg overflow-hidden">
+              <Image
+                src="/images/blog/exposure-comparison.jpg"
+                alt="Three versions of the same photo with different exposure settings"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white text-sm">
+                Each side of the triangle changes how your photo looks—and feels.
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Balancing the Triangle</h2>
+            <p className="text-gray-700 mb-6">
+              The real skill comes in balancing the three settings based on the lighting and what kind of image you want to create. Here's a quick example:
+            </p>
+            <p className="text-gray-700 mb-6">
+              Let's say you're shooting a portrait in natural light, but it's starting to get dark. You might:
+            </p>
+            <ul className="list-disc pl-8 mb-6 text-gray-700">
+              <li>Open your aperture to f/2.8 to let in more light</li>
+              <li>Lower your shutter speed a bit, but not too much or you'll get blur</li>
+              <li>Raise your ISO slightly to brighten the image without too much noise</li>
+            </ul>
+            <p className="text-gray-700 mb-6">
+              There's no one perfect setting—it's all about tradeoffs. The more you practice, the more intuitive it becomes.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Final Thoughts</h2>
+            <p className="text-gray-700 mb-6">
+              Learning the exposure triangle is one of the biggest steps in becoming a confident photographer. It takes a bit of trial and error at first, but once it clicks, you'll be able to look at a scene and know exactly how to expose it.
+            </p>
+            <p className="text-gray-700 mb-6">
+              You'll start to see light differently. You'll think about your photos more intentionally. And you'll have way more creative control over the final image.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">How Thea Helps You Practice</h2>
+            <p className="text-gray-700 mb-6">
+              If you're learning manual photography or shooting film, Thea makes understanding the exposure triangle much easier. It's a free light metering app for iPhone that shows you real-time exposure readings based on your current settings.
+            </p>
+            <p className="text-gray-700 mb-6">
+              You can choose between aperture priority, shutter priority, or manual mode—depending on which part of the triangle you want to control. Thea shows you the matching settings that complete the triangle for a correct exposure.
+            </p>
+            <p className="text-gray-700 mb-6">
+              You can also limit your aperture, shutter speed, or ISO to match your camera or film, which is especially helpful when you're learning how different settings interact.
+            </p>
+            <p className="text-gray-700 mb-6">
+              The best part? You can try things out without even picking up your camera. Use Thea to meter a scene, adjust settings, and see how the exposure changes. It's a hands-on way to understand the triangle—without wasting a roll of film or guessing your settings.
+            </p>
+          </section>
+        </div>
+      </article>
+    </div>
   );
 } 

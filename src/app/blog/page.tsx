@@ -7,7 +7,7 @@ const blogPosts = [
     id: 1,
     title: "Understanding Spot Metering: A Beginner's Guide",
     excerpt: 'Learn the fundamentals of spot metering and how it can help you achieve more precise exposures in your photography.',
-    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/blog/spot-metering-portrait.jpg',
     date: 'March 15, 2024',
     readTime: '8 min read',
     slug: 'understanding-spot-metering'
@@ -15,8 +15,8 @@ const blogPosts = [
   {
     id: 2,
     title: 'Studio Photography: Mastering Spot Metering',
-    excerpt: 'Discover how to use spot metering effectively in a studio environment to achieve perfect exposure every time.',
-    image: 'https://images.unsplash.com/photo-1520549233664-03f65c1d1327?q=80&w=2000&auto=format&fit=crop',
+    excerpt: 'Control your light. Nail your exposure. One spot at a time. Learn how to use spot metering for precise studio exposures.',
+    image: '/images/blog/studio-portrait-setup.jpg',
     date: 'March 10, 2024',
     readTime: '10 min read',
     slug: 'studio-spot-metering'
@@ -24,8 +24,8 @@ const blogPosts = [
   {
     id: 3,
     title: 'The Photography Exposure Triangle Explained',
-    excerpt: 'Master the three fundamental elements of exposure: aperture, shutter speed, and ISO. Learn how they work together.',
-    image: 'https://images.unsplash.com/photo-1610448721566-47369c768e70?q=80&w=2000&auto=format&fit=crop',
+    excerpt: 'How aperture, shutter speed, and ISO work together—and how to get the balance right. Master these fundamentals for better photos.',
+    image: '/images/blog/exposure-triangle-diagram.jpg',
     date: 'March 5, 2024',
     readTime: '7 min read',
     slug: 'exposure-triangle'
@@ -74,7 +74,7 @@ export default function BlogPage() {
               </p>
               <Link
                 href={`/blog/${post.slug}`}
-                className="inline-flex items-center text-gray-800 hover:text-gray-600 font-medium"
+                className="inline-flex items-center text-gray-800 hover:text-gray-600 font-medium min-h-[48px]"
               >
                 Read more
                 <svg

@@ -120,7 +120,7 @@ export default function FAQPage() {
           >
             <Accordion.Header className="w-full">
               <Accordion.Trigger 
-                className="w-full px-8 py-5 text-left flex justify-between items-center hover:bg-white transition-colors data-[state=open]:bg-white accordion-trigger"
+                className="w-full px-8 py-3 text-left flex justify-between items-center hover:bg-white transition-colors data-[state=open]:bg-white accordion-trigger min-h-[48px]"
                 style={{ position: 'relative' }}
               >
                 <span className="text-lg font-medium text-gray-900">

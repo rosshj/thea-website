@@ -18,7 +18,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Link
               href="https://apps.apple.com/app/thea"
-              className="inline-flex items-center px-8 py-4 text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transition-all duration-200"
+              className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transition-all duration-200 min-h-[48px]"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
                 <g className="nc-icon-wrapper" fill="currentColor">
@@ -30,7 +30,7 @@ export default function Home() {
             </Link>
             <ScrollButton
               targetId="features-grid"
-              className="inline-flex items-center px-8 py-4 text-base font-medium rounded-full border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200"
+              className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 min-h-[48px]"
             >
               Learn More
             </ScrollButton>
@@ -45,8 +45,8 @@ export default function Home() {
             <div className="gradient-blue-yellow rounded-2xl overflow-hidden flex flex-col">
               <div className="relative aspect-square">
                 <Image
-                  src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=2000&auto=format&fit=crop"
-                  alt="Camera light meter display"
+                  src="/images/home/iphone-pocket.jpg"
+                  alt="Person with iPhone in pocket"
                   fill
                   className="object-cover"
                 />
@@ -62,8 +62,8 @@ export default function Home() {
             <div className="gradient-blue-purple rounded-2xl overflow-hidden flex flex-col">
               <div className="relative aspect-square">
                 <Image
-                  src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?q=80&w=2000&auto=format&fit=crop"
-                  alt="Camera histogram display"
+                  src="/images/home/film-camera.jpg"
+                  alt="Medium format film camera with waterfall view in viewfinder"
                   fill
                   className="object-cover"
                 />
@@ -165,14 +165,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="bg-gray-900 text-white rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center">
             <h2 className="text-4xl font-bold mb-8">
-              Your new favorite light meter—free.
+              Try Thea—free on iOS.
             </h2>
-            <p className="text-xl text-gray-300 mb-10">
-              No ads, no subscriptions. Just a beautiful tool made with love for the photography community. Try Thea today.
+            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+              A simple, beautiful light meter built for photographers of all levels. No ads, no cost—just a tool to help you shoot with confidence.
             </p>
             <Link
               href="https://apps.apple.com/app/thea"
-              className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-full text-gray-900 bg-white hover:bg-gray-100 transition-all duration-200"
+              className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-gray-900 bg-white hover:bg-gray-100 transition-all duration-200 min-h-[48px]"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
                 <g className="nc-icon-wrapper" fill="currentColor">

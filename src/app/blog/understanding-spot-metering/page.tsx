@@ -1,82 +1,111 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function BlogPost() {
   return (
-    <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div className="relative h-96 mb-12 rounded-lg overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=2000&auto=format&fit=crop"
-          alt="Camera with spot metering display"
-          fill
-          className="object-cover"
-        />
-      </div>
-      
-      <header className="mb-12">
-        <div className="flex items-center text-sm text-gray-500 mb-4">
-          <span>March 15, 2024</span>
-          <span className="mx-2">•</span>
-          <span>8 min read</span>
+    <div>
+      {/* Full width hero section with the same width constraint as CTA */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 mb-16">
+        <div className="relative h-[70vh] rounded-3xl overflow-hidden">
+          <Image
+            src="/images/blog/spot-metering-portrait.jpg"
+            alt="Woman with blonde hair surrounded by green foliage - perfect for spot metering"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 p-8">
+            <div className="flex items-center text-sm text-gray-200 mb-4">
+              <span>March 15, 2024</span>
+              <span className="mx-2">•</span>
+              <span>8 min read</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Understanding Spot Metering: A Beginner's Guide</h1>
+            <p className="text-xl text-gray-200">What it is, why it matters, and how to start using it with confidence.</p>
+          </div>
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Understanding Spot Metering: A Beginner's Guide</h1>
-        <div className="flex items-center">
-          <span className="text-gray-600">By John Smith</span>
-        </div>
-      </header>
-
-      <div className="prose prose-lg max-w-none">
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Spot Metering?</h2>
-          <p className="text-gray-700 mb-6">
-            Spot metering is a precise light measurement technique that measures exposure from a very small area of your scene—typically around 1-5% of the viewfinder area. Unlike evaluative or matrix metering, which considers the entire frame, spot metering gives you pinpoint accuracy for exposure readings.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">When to Use Spot Metering</h2>
-          <p className="text-gray-700 mb-6">
-            Spot metering is particularly useful in high-contrast situations where you need to ensure proper exposure of a specific subject. One common application is in backlit portraits, where you want to expose correctly for the subject's face despite strong light coming from behind. This technique is also invaluable in concert photography, where dramatic stage lighting can create challenging exposure situations.
-          </p>
-          <p className="text-gray-700 mb-6">
-            Wildlife photographers often rely on spot metering when photographing subjects against bright skies, ensuring their subjects are properly exposed despite the dramatic background lighting. In product photography, where precise exposure is crucial for accurate representation, spot metering helps achieve consistent and accurate results by measuring light from specific parts of the product.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Use Spot Metering</h2>
-          <p className="text-gray-700 mb-6">
-            The process of using spot metering effectively begins with switching your camera to spot metering mode. Once activated, you'll need to position the spot meter, typically located at your camera's center focus point, directly on your subject. Take your initial meter reading by half-pressing the shutter button, which will give you a baseline exposure for that specific area.
-          </p>
-          <p className="text-gray-700 mb-6">
-            If you need to recompose your shot after metering, the exposure lock (AE-L) feature becomes essential. By pressing and holding the AE-L button, you can maintain your measured exposure while adjusting your composition. Fine-tune your exposure using exposure compensation if needed, especially in situations where the camera's suggested settings don't quite match your creative vision.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Common Mistakes to Avoid</h2>
-          <p className="text-gray-700 mb-6">
-            When working with spot metering, several common pitfalls can affect your results. The most frequent mistake is metering from the wrong part of your subject. For example, in portrait photography, metering from clothing instead of skin tones can lead to incorrect exposures. Similarly, forgetting to use exposure lock when recomposing can result in unwanted exposure shifts, as your camera continues to meter from whatever falls under the spot meter point.
-          </p>
-          <p className="text-gray-700 mb-6">
-            Another critical mistake is not considering the overall scene exposure while focusing on spot metering. While spot metering is precise for your subject, it's important to maintain awareness of the entire scene's exposure range. Additionally, some photographers fall into the trap of using spot metering in situations where evaluative metering would be more appropriate, such as in evenly lit scenes or when capturing wide landscapes.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Using Thea for Spot Metering</h2>
-          <p className="text-gray-700 mb-6">
-            Thea's spot metering feature provides incredibly accurate readings with a precise 1° measuring angle. The app's real-time display helps you understand exactly how different parts of your scene are exposed, making it easier to achieve the perfect exposure every time. This precision, combined with the app's intuitive interface, makes it an invaluable tool for photographers looking to master exposure in challenging lighting situations.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Conclusion</h2>
-          <p className="text-gray-700">
-            Spot metering is a powerful tool in your photography arsenal. While it requires more thought and precision than other metering modes, the control it offers can help you capture exactly the exposure you want, especially in challenging lighting situations. With practice and understanding, it becomes an invaluable technique for achieving professional-quality results in your photography.
-          </p>
-        </section>
       </div>
-    </article>
+
+      {/* Content section with readable width */}
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="prose prose-lg max-w-none">
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Spot Metering?</h2>
+            <p className="text-gray-700 mb-6">
+              If you've ever taken a photo where your subject looked too dark or too bright, you're not alone. That usually happens because your camera—or phone—is trying to expose for everything in the frame, not just the part you care about.
+            </p>
+            <p className="text-gray-700 mb-6">
+              That's where spot metering comes in. It lets you measure the light in one small part of the scene—like someone's face, or a detail you want to highlight—and base your exposure on just that spot.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Instead of averaging the light from the whole image, spot metering says: "Just measure this one area." It's incredibly useful in scenes with high contrast, where you want to make sure one specific subject is correctly exposed.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Should You Use It?</h2>
+            <p className="text-gray-700 mb-6">
+              Let's say you're taking a portrait of a friend who's standing in front of a bright window. If your camera meters for the whole scene, your friend might end up underexposed while the window looks perfect.
+            </p>
+            <p className="text-gray-700 mb-6">
+              But if you meter just for their face, you'll get the exposure you actually want—even if the background ends up bright or blown out.
+            </p>
+            <p className="text-gray-700 mb-6">
+              This kind of precision is especially helpful when you're shooting film, where you can't see your results immediately. Spot metering gives you a reliable way to get your exposure right, even when the lighting is tricky.
+            </p>
+            
+            <div className="relative h-96 my-10 rounded-lg overflow-hidden">
+              <Image
+                src="/images/blog/window-portrait-2.jpg"
+                alt="Woman with dark hair by a window in low light - perfect for spot metering"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white text-sm">
+                Spot metering helps your subject come out properly exposed—even in tricky light.
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">How Does Spot Metering Work?</h2>
+            <p className="text-gray-700 mb-6">
+              Spot metering works by measuring a small part of the scene and calculating the exposure as if that area were a medium gray. This is the baseline most meters use—what's often called "18% gray." If you're metering something darker or lighter than that, you'll need to adjust accordingly.
+            </p>
+            <p className="text-gray-700 mb-6">
+              For example, if you point your meter at a white wall, it might try to darken it to gray—meaning your photo will be underexposed. If you meter off a dark jacket, it might brighten it too much, resulting in overexposure.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Understanding how different tones affect the meter's reading is a key part of learning how to use spot metering well. It takes a little practice, but once you get it, you'll be able to predict and adjust for these situations with ease.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Real Talk: Why It's Worth Learning</h2>
+            <p className="text-gray-700 mb-6">
+              Spot metering isn't just for pros. It's for anyone who wants a little more control over how their photos turn out. Once you understand how to expose for the subject you care about—especially in challenging lighting—you'll see a huge difference in your results.
+            </p>
+            <p className="text-gray-700 mb-6">
+              It also helps build your overall understanding of how light works, which will carry over into every other part of your photography.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">How Thea Makes It Easy</h2>
+            <p className="text-gray-700 mb-6">
+              If you're new to metering or just want a simple tool that works, Thea is designed to make spot metering feel natural. You open the app, point your phone at the subject, and see live exposure readings. You can choose between aperture priority, shutter priority, or manual mode—just like on a real camera.
+            </p>
+            <p className="text-gray-700 mb-6">
+              When you find the right reading, tap to lock it. This is helpful if you want to reframe your shot without losing your settings. You can even switch to the front-facing camera if you're metering for a selfie or a self-portrait.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Thea also lets you set your ISO and limit your aperture or shutter speed—especially useful if you're shooting film and want the readings to match your actual gear. And it's completely free, with no ads or clutter.
+            </p>
+          </section>
+        </div>
+      </article>
+    </div>
   );
 } 

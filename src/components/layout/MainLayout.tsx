@@ -69,7 +69,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             <div className="flex items-center">
               <Link
                 href="https://apps.apple.com/app/thea"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-800 rounded-full hover:bg-gray-700"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-800 rounded-full hover:bg-gray-700 min-h-[48px]"
               >
                 Download App
               </Link>
@@ -83,7 +83,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         <div className="px-4 flex items-center justify-center h-16 relative">
           <button
             onClick={() => setIsMobileSidebarOpen(true)}
-            className="text-gray-500 hover:text-gray-900 absolute left-4 flex items-center justify-center rounded-full w-8 h-8 hover:bg-gray-100"
+            className="text-gray-500 hover:text-gray-900 absolute left-4 flex items-center justify-center rounded-full w-12 h-12 hover:bg-gray-100"
             aria-label="Open navigation menu"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
@@ -103,7 +103,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </Link>
           <Link
             href="https://apps.apple.com/app/thea"
-            className="inline-flex items-center justify-center w-8 h-8 text-white bg-gray-800 rounded-full hover:bg-gray-700 absolute right-4"
+            className="inline-flex items-center justify-center w-12 h-12 text-white bg-gray-800 rounded-full hover:bg-gray-700 absolute right-4"
             aria-label="Download App"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
@@ -132,7 +132,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`group flex items-center px-4 py-2 text-sm font-medium rounded-md 
+                    className={`group flex items-center px-4 py-3 text-sm font-medium rounded-md min-h-[48px]
                       ${isActive 
                         ? 'text-gray-900 bg-gray-50' 
                         : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}
@@ -166,7 +166,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <button
               onClick={() => setIsMobileSidebarOpen(false)}
-              className="text-gray-500 hover:text-gray-900 flex items-center justify-center rounded-full w-8 h-8 hover:bg-gray-100"
+              className="text-gray-500 hover:text-gray-900 flex items-center justify-center rounded-full w-12 h-12 hover:bg-gray-100"
               aria-label="Close navigation menu"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
@@ -187,7 +187,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`flex items-center px-4 py-2 text-base font-medium rounded-md 
+                    className={`flex items-center px-4 py-3 text-base font-medium rounded-md min-h-[48px]
                       ${isActive 
                         ? 'text-gray-900 bg-gray-50' 
                         : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}
@@ -200,7 +200,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             <div className="px-4 mt-6">
               <Link
                 href="https://apps.apple.com/app/thea"
-                className="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-800 rounded-full hover:bg-gray-700"
+                className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white bg-gray-800 rounded-full hover:bg-gray-700 min-h-[48px]"
               >
                 Download App
               </Link>
@@ -221,14 +221,14 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
               <div className="bg-gray-900 text-white rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center">
                 <h2 className="text-4xl font-bold mb-8">
-                  Your new favorite light meter—free.
+                  Try Thea—free on iOS.
                 </h2>
-                <p className="text-xl text-gray-300 mb-10">
-                  No ads, no subscriptions. Just a beautiful tool made with love for the photography community. Try Thea today.
+                <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                  A simple, beautiful light meter built for photographers of all levels. No ads, no cost—just a tool to help you shoot with confidence.
                 </p>
                 <Link
                   href="https://apps.apple.com/app/thea"
-                  className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-full text-gray-900 bg-white hover:bg-gray-100 transition-all duration-200"
+                  className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-gray-900 bg-white hover:bg-gray-100 transition-all duration-200 min-h-[48px]"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
                     <g className="nc-icon-wrapper" fill="currentColor">
