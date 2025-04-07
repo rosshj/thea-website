@@ -52,8 +52,8 @@ export default function Home() {
                 />
               </div>
               <div className="p-8 gradient-box bg-white/10 flex-1">
-                <h3 className="text-xl font-semibold mb-4">A meter wherever you go</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">A meter wherever you go</h3>
+                <p className="text-gray-700">
                   Your phone is always with you—so is Thea. Get quick, accurate readings anywhere you shoot.
                 </p>
               </div>
@@ -69,8 +69,8 @@ export default function Home() {
                 />
               </div>
               <div className="p-8 gradient-box bg-white/10 flex-1">
-                <h3 className="text-xl font-semibold mb-4">Accurate readings</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Accurate readings</h3>
+                <p className="text-gray-700">
                   Thea uses your iPhone's camera to deliver real-time exposure readings—so you can shoot with confidence.
                 </p>
               </div>
@@ -86,8 +86,8 @@ export default function Home() {
                 />
               </div>
               <div className="p-8 gradient-box bg-white/10 flex-1">
-                <h3 className="text-xl font-semibold mb-4">An intuitive interface</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">An intuitive interface</h3>
+                <p className="text-gray-700">
                   No clutter. No confusion. Just a clean, minimal design that helps you focus on creating great photos.
                 </p>
               </div>
