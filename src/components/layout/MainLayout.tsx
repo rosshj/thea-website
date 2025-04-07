@@ -89,7 +89,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         <div className="px-6 sm:px-8 lg:px-10 flex items-center justify-center h-16 relative">
           <button
             onClick={() => setIsMobileSidebarOpen(true)}
-            className="text-gray-500 hover:text-gray-900 absolute left-4 flex items-center justify-center rounded-full w-12 h-12 hover:bg-gray-100"
+            className="text-gray-900 absolute left-4 flex items-center justify-center rounded-full w-12 h-12 bg-gray-50"
             aria-label="Open navigation menu"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
