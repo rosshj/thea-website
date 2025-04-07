@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[calc(80vh-4rem)] flex items-center justify-center bg-white px-4 sm:px-6 lg:px-8">
+      <section className="relative h-[calc(80vh-4rem)] flex items-center justify-center bg-white px-6 sm:px-8 lg:px-10">
         <div className="relative max-w-4xl mx-auto text-center">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 text-gray-900">
             A beautiful light meter for everyone.

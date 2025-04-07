@@ -28,7 +28,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     <div className="min-h-screen flex flex-col bg-white">
       {/* Desktop Header */}
       <header className="fixed top-0 left-0 right-0 h-16 z-50 backdrop-blur-[10px] bg-white/80 supports-[backdrop-filter]:bg-white/30 hidden lg:block">
-        <div className="px-8">
+        <div className="px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
@@ -71,7 +71,13 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 href="https://apps.apple.com/app/thea"
                 className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-800 rounded-full hover:bg-gray-700 min-h-[48px]"
               >
-                Download App
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
+                  <g className="nc-icon-wrapper" fill="currentColor">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M13.3091 6.48971C13.8886 6.26249 14.614 6.00143 15.6913 6.00143C17.3749 6.00143 19.1523 6.89003 20.3404 8.35613L21.0976 9.29055L20.0406 9.86449C17.5093 11.2391 17.8608 14.8633 20.4912 15.8476L21.4953 16.2234L21.0506 17.199C20.5752 18.2418 20.3284 18.7499 19.6885 19.7119C18.7074 21.192 17.3565 22.9787 15.3958 22.997C14.1793 23.0084 13.2116 22.1656 12.0053 22.172C10.7909 22.1784 9.80329 23 8.57946 22.9999L8.57073 22.9999C6.64549 22.9829 5.31146 21.3315 4.3393 19.8664C1.80437 16.0461 1.46451 11.568 3.19812 8.92508C4.43251 7.04322 6.3164 6.00413 8.20878 6.00413C9.15354 6.00413 9.91949 6.26847 10.5172 6.47873C11.1502 6.70144 11.5462 6.84 11.9823 6.84C12.4376 6.84 12.7407 6.71256 13.3091 6.48971Z" fill="currentColor"></path>
+                    <path d="M15.3653 3.793C16.0815 2.87425 16.5703 1.63176 16.373 0.305766C15.203 0.386016 13.89 1.07576 13.0913 2.0455C12.3668 2.92525 11.7675 4.231 12 5.5C13.2765 5.53975 14.598 4.77775 15.3653 3.793Z" fill="currentColor" data-color="color-2"></path>
+                  </g>
+                </svg>
+                Download for iOS
               </Link>
             </div>
           </div>
@@ -80,7 +86,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
       {/* Mobile header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-30 backdrop-blur-[10px] bg-white/80 supports-[backdrop-filter]:bg-white/30">
-        <div className="px-4 flex items-center justify-center h-16 relative">
+        <div className="px-6 sm:px-8 lg:px-10 flex items-center justify-center h-16 relative">
           <button
             onClick={() => setIsMobileSidebarOpen(true)}
             className="text-gray-500 hover:text-gray-900 absolute left-4 flex items-center justify-center rounded-full w-12 h-12 hover:bg-gray-100"
@@ -123,7 +129,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       >
         <div className="flex-1 flex flex-col min-h-0 bg-white">
           <div className="flex-1 flex flex-col pt-8 overflow-y-auto">
-            <nav className="px-8 space-y-1">
+            <nav className="px-6 sm:px-8 lg:px-10 space-y-1">
               {navItems.map((item) => {
                 const isActive = pathname === item.href || 
                   (item.href !== '/' && pathname?.startsWith(item.href));
@@ -178,7 +184,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             </button>
           </div>
           <div className="flex-1 flex flex-col pt-6 overflow-y-auto">
-            <nav className="px-4 space-y-1">
+            <nav className="px-6 sm:px-8 lg:px-10 space-y-1">
               {navItems.map((item) => {
                 const isActive = pathname === item.href || 
                   (item.href !== '/' && pathname?.startsWith(item.href));
@@ -197,12 +203,18 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 );
               })}
             </nav>
-            <div className="px-4 mt-6">
+            <div className="px-6 sm:px-8 lg:px-10 mt-6">
               <Link
                 href="https://apps.apple.com/app/thea"
-                className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white bg-gray-800 rounded-full hover:bg-gray-700 min-h-[48px]"
+                className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white bg-gray-800 rounded-full hover:bg-gray-700 min-h-[48px]"
               >
-                Download App
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
+                  <g className="nc-icon-wrapper" fill="currentColor">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M13.3091 6.48971C13.8886 6.26249 14.614 6.00143 15.6913 6.00143C17.3749 6.00143 19.1523 6.89003 20.3404 8.35613L21.0976 9.29055L20.0406 9.86449C17.5093 11.2391 17.8608 14.8633 20.4912 15.8476L21.4953 16.2234L21.0506 17.199C20.5752 18.2418 20.3284 18.7499 19.6885 19.7119C18.7074 21.192 17.3565 22.9787 15.3958 22.997C14.1793 23.0084 13.2116 22.1656 12.0053 22.172C10.7909 22.1784 9.80329 23 8.57946 22.9999L8.57073 22.9999C6.64549 22.9829 5.31146 21.3315 4.3393 19.8664C1.80437 16.0461 1.46451 11.568 3.19812 8.92508C4.43251 7.04322 6.3164 6.00413 8.20878 6.00413C9.15354 6.00413 9.91949 6.26847 10.5172 6.47873C11.1502 6.70144 11.5462 6.84 11.9823 6.84C12.4376 6.84 12.7407 6.71256 13.3091 6.48971Z" fill="currentColor"></path>
+                    <path d="M15.3653 3.793C16.0815 2.87425 16.5703 1.63176 16.373 0.305766C15.203 0.386016 13.89 1.07576 13.0913 2.0455C12.3668 2.92525 11.7675 4.231 12 5.5C13.2765 5.53975 14.598 4.77775 15.3653 3.793Z" fill="currentColor" data-color="color-2"></path>
+                  </g>
+                </svg>
+                Download for iOS
               </Link>
             </div>
           </div>
@@ -244,7 +256,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         )}
 
         <footer className="bg-white">
-          <div className="mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="mx-auto px-6 sm:px-8 lg:px-10 py-6">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="flex items-center mb-4 md:mb-0">
                 <Link href="/" className="flex items-center">

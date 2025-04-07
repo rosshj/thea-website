@@ -28,7 +28,7 @@ export default function BlogPost() {
       </div>
 
       {/* Content section with readable width */}
-      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <article className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="prose prose-lg max-w-none">
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Studio Photography Demands Precision</h2>

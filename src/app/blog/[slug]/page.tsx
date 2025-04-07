@@ -19,7 +19,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <article className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-10 py-20">
       {post.image && (
         <div className="relative h-96 mb-8 rounded-lg overflow-hidden">
           <Image
