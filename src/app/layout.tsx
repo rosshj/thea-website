@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description: 'Achieve perfect exposure in any lighting condition with Thea, your professional light meter app for iOS.',
   keywords: 'light meter, photography, exposure, iOS app, camera settings, studio lighting',
   authors: [{ name: 'Thea Team' }],
+  themeColor: '#ffffff',
   openGraph: {
     title: 'Thea - Professional Light Meter App for iOS',
     description: 'Achieve perfect exposure in any lighting condition with Thea, your professional light meter app for iOS.',
