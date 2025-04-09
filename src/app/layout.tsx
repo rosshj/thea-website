@@ -8,10 +8,6 @@ export const metadata: Metadata = {
   description: 'Achieve perfect exposure in any lighting condition with Thea, your professional light meter app for iOS.',
   keywords: 'light meter, photography, exposure, iOS app, camera settings, studio lighting',
   authors: [{ name: 'Thea Team' }],
-  themeColor: '#ffffff',
-  appleWebApp: {
-    statusBarStyle: 'default',
-  },
   openGraph: {
     title: 'Thea - Professional Light Meter App for iOS',
     description: 'Achieve perfect exposure in any lighting condition with Thea, your professional light meter app for iOS.',
@@ -43,6 +39,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      </head>
       <body>
         <MainLayout>{children}</MainLayout>
       </body>
