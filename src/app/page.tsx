@@ -79,7 +79,7 @@ export default function Home() {
             <div className="gradient-orange-pink rounded-2xl overflow-hidden flex flex-col">
               <div className="relative aspect-square">
                 <Image
-                  src="https://images.unsplash.com/photo-1452697620382-f6543ead73b5?q=80&w=2000&auto=format&fit=crop"
+                  src="/images/home/app-bottom-controls.jpg"
                   alt="Camera settings display"
                   fill
                   className="object-cover"
