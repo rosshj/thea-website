@@ -231,7 +231,12 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         {pathname !== '/' && (
           <section className="mb-16">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-              <div className="bg-gray-900 text-white rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center">
+              <div 
+                className="text-white rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center"
+                style={{ 
+                  background: 'linear-gradient(135deg, #C04848 0%, #480048 51%, #C04848 100%)'
+                }}
+              >
                 <h2 className="text-4xl font-bold mb-8">
                   Try Thea—free on iOS.
                 </h2>
