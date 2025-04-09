@@ -25,7 +25,7 @@ const blogPosts = [
     id: 3,
     title: 'The Photography Exposure Triangle Explained',
     excerpt: 'How aperture, shutter speed, and ISO work together—and how to get the balance right. Master these fundamentals for better photos.',
-    image: '/images/blog/exposure-triangle-diagram.jpg',
+    image: '/images/blog/exposure-triangle.png',
     date: 'March 5, 2024',
     readTime: '7 min read',
     slug: 'exposure-triangle'

@@ -9,7 +9,7 @@ export default function BlogPost() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 mb-16">
         <div className="relative h-[70vh] rounded-3xl overflow-hidden">
           <Image
-            src="/images/blog/exposure-triangle-diagram.jpg"
+            src="/images/blog/exposure-triangle.png"
             alt="Camera settings showing aperture, shutter speed and ISO controls"
             fill
             className="object-cover"
