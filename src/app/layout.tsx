@@ -46,7 +46,13 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link
           rel="icon"
-          href="/icon.png"
+          href="/icon-16x16.png"
+          type="image/png"
+          sizes="16x16"
+        />
+        <link
+          rel="icon"
+          href="/icon-32x32.png"
           type="image/png"
           sizes="32x32"
         />
