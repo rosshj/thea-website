@@ -42,10 +42,27 @@ export default function Home() {
       <section id="features-grid" className="bg-white mb-10">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="gradient-orange-pink rounded-2xl overflow-hidden flex flex-col">
+              <div className="relative aspect-square">
+                <Image
+                  src="/images/home/bottom-controls.png"
+                  alt="Camera settings display"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8 gradient-box bg-white/10 flex-1">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">An intuitive interface</h3>
+                <p className="text-gray-700">
+                  No clutter. No confusion. Just a clean, minimal design that helps you focus on creating great photos.
+                </p>
+              </div>
+            </div>
+
             <div className="gradient-blue-yellow rounded-2xl overflow-hidden flex flex-col">
               <div className="relative aspect-square">
                 <Image
-                  src="/images/home/iphone-pocket.jpg"
+                  src="/images/home/phone-pocket.png"
                   alt="Person with iPhone in pocket"
                   fill
                   className="object-cover"
@@ -62,7 +79,7 @@ export default function Home() {
             <div className="gradient-blue-purple rounded-2xl overflow-hidden flex flex-col">
               <div className="relative aspect-square">
                 <Image
-                  src="/images/home/film-camera.jpg"
+                  src="/images/home/speed.png"
                   alt="Medium format film camera with waterfall view in viewfinder"
                   fill
                   className="object-cover"
@@ -72,23 +89,6 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Accurate readings</h3>
                 <p className="text-gray-700">
                   Thea uses your iPhone's camera to deliver real-time exposure readings—so you can shoot with confidence.
-                </p>
-              </div>
-            </div>
-
-            <div className="gradient-orange-pink rounded-2xl overflow-hidden flex flex-col">
-              <div className="relative aspect-square">
-                <Image
-                  src="/images/home/app-bottom-controls.jpg"
-                  alt="Camera settings display"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-8 gradient-box bg-white/10 flex-1">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">An intuitive interface</h3>
-                <p className="text-gray-700">
-                  No clutter. No confusion. Just a clean, minimal design that helps you focus on creating great photos.
                 </p>
               </div>
             </div>
