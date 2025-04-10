@@ -44,6 +44,29 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link
+          rel="icon"
+          href="/icon.png"
+          type="image/png"
+          sizes="32x32"
+        />
+        <link
+          rel="icon"
+          href="/icon-48x48.png"
+          type="image/png"
+          sizes="48x48"
+        />
+        <link
+          rel="icon"
+          href="/icon-96x96.png"
+          type="image/png"
+          sizes="96x96"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/icon-96x96.png"
+          sizes="96x96"
+        />
       </head>
       <body>
         <MainLayout>{children}</MainLayout>
