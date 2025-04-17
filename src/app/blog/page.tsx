@@ -46,53 +46,51 @@ export default function BlogPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {blogPosts.map((post) => (
-          <article
+          <Link
             key={post.id}
-            className="bg-gray-50 rounded-2xl transition-all duration-200 border border-gray-100 overflow-hidden"
+            href={`/blog/${post.slug}`}
+            className="block h-full"
           >
-            <div className="relative aspect-square">
-              <Image
-                src={post.image}
-                alt={post.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="p-8">
-              <div className="flex items-center text-sm text-gray-500 mb-4">
-                <time dateTime={post.date}>{post.date}</time>
-                <span className="mx-2">•</span>
-                <span>{post.readTime}</span>
+            <article className="bg-gray-50 rounded-2xl transition-all duration-200 border border-gray-100 overflow-hidden h-full flex flex-col">
+              <div className="relative aspect-square">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                <Link href={`/blog/${post.slug}`} className="hover:text-gray-700 transition-colors">
+              <div className="p-8 flex flex-col flex-grow">
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <time dateTime={post.date}>{post.date}</time>
+                  <span className="mx-2">•</span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                   {post.title}
-                </Link>
-              </h2>
-              <p className="text-gray-600 mb-6">
-                {post.excerpt}
-              </p>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="inline-flex items-center text-gray-800 hover:text-gray-600 font-medium min-h-[48px]"
-              >
-                Read more
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </article>
+                </h2>
+                <p className="text-gray-600 mb-6 flex-grow">
+                  {post.excerpt}
+                </p>
+                <div className="inline-flex items-center text-gray-800 hover:text-gray-600 font-medium min-h-[48px]">
+                  Read more
+                  <svg
+                    className="ml-2 w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </Link>
         ))}
       </div>
     </div>
