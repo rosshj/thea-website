@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import * as Accordion from '@radix-ui/react-accordion';
 import Link from 'next/link';
+import AnimatedGradient from '@/components/ui/AnimatedGradient';
 
 const faqs = [
   {

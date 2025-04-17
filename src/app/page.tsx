@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ScrollButton from '@/components/ui/ScrollButton';
+import AnimatedGradient from '@/components/ui/AnimatedGradient';
 
 export default function Home() {
   return (
@@ -163,16 +164,11 @@ export default function Home() {
       {/* CTA Section */}
       <section className="mb-16">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-          <div 
-            className="text-white rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center"
-            style={{ 
-              background: 'linear-gradient(135deg, #C04848 0%, #480048 51%, #C04848 100%)'
-            }}
-          >
-            <h2 className="text-4xl font-bold mb-8">
+          <AnimatedGradient className="rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center">
+            <h2 className="text-4xl font-bold mb-8 text-white">
               Try Thea—free on iOS.
             </h2>
-            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
               A simple, beautiful light meter built for photographers of all levels. No ads, no cost—just a tool to help you shoot with confidence.
             </p>
             <Link
@@ -187,7 +183,7 @@ export default function Home() {
               </svg>
               Download for iOS
             </Link>
-          </div>
+          </AnimatedGradient>
         </div>
       </section>
     </div>
