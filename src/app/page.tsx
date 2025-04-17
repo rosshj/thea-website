@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[calc(80vh-4rem)] flex items-center justify-center bg-white px-6 sm:px-8 lg:px-10">
+      <section className="relative h-[calc(80vh-4rem)] flex items-center justify-center bg-white px-6 sm:px-8 lg:px-10 mb-6 sm:mb-10">
         <motion.div 
           className="relative max-w-4xl mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* Features Grid */}
-      <section id="features-grid" className="bg-white mb-10">
+      <section id="features-grid" className="bg-white mb-10 pt-8 sm:pt-6">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-10"

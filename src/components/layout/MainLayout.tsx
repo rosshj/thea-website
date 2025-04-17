@@ -28,7 +28,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Desktop Header */}
-      <header className="fixed top-0 left-0 right-0 h-16 z-50 backdrop-blur-[10px] bg-white/80 supports-[backdrop-filter]:bg-white/30 hidden lg:block">
+      <header className="fixed top-0 left-0 right-0 h-16 z-50 backdrop-blur-[10px] bg-white/80 supports-[backdrop-filter]:bg-white/30 hidden xl:block">
         <div className="px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -86,7 +86,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       </header>
 
       {/* Mobile header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-30 backdrop-blur-[10px] bg-white/80 supports-[backdrop-filter]:bg-white/30">
+      <div className="xl:hidden fixed top-0 left-0 right-0 z-30 backdrop-blur-[10px] bg-white/80 supports-[backdrop-filter]:bg-white/30">
         <div className="px-6 sm:px-8 lg:px-10 flex items-center justify-center h-16 relative">
           <button
             onClick={() => setIsMobileSidebarOpen(true)}
@@ -125,7 +125,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
       {/* Desktop Sidebar */}
       <div 
-        className={`fixed inset-y-0 left-0 z-20 transition-all duration-300 ease-in-out transform ${isDesktopSidebarCollapsed ? '-translate-x-full' : 'translate-x-0'} hidden lg:flex lg:flex-col`} 
+        className={`fixed inset-y-0 left-0 z-20 transition-all duration-300 ease-in-out transform ${isDesktopSidebarCollapsed ? '-translate-x-full' : 'translate-x-0'} hidden xl:flex xl:flex-col`} 
         style={{ top: '4rem', width: '260px' }}
       >
         <div className="flex-1 flex flex-col min-h-0 bg-white">
@@ -155,11 +155,11 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       </div>
 
       {/* Silk-style Mobile Sidebar */}
-      <div className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-300 ${isMobileSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
+      <div className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 xl:hidden transition-opacity duration-300 ${isMobileSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
            onClick={() => setIsMobileSidebarOpen(false)}>
       </div>
       <div 
-        className={`fixed left-4 top-4 bottom-4 w-64 bg-gray-50 z-50 lg:hidden transform transition-transform duration-300 ease-in-out rounded-2xl ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-[calc(100%+16px)]'}`}
+        className={`fixed left-4 top-4 bottom-4 w-64 bg-gray-50 z-50 xl:hidden transform transition-transform duration-300 ease-in-out rounded-2xl ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-[calc(100%+16px)]'}`}
       >
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between h-16 px-4">
@@ -223,7 +223,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       </div>
 
       {/* Main content */}
-      <div className={`flex flex-col flex-1 mt-16 transition-all duration-300 ease-in-out ${isDesktopSidebarCollapsed ? 'lg:ml-0' : 'lg:ml-[260px]'}`}>
+      <div className={`flex flex-col flex-1 mt-16 transition-all duration-300 ease-in-out ${isDesktopSidebarCollapsed ? 'xl:ml-0' : 'xl:ml-[260px]'}`}>
         <main className="flex-1">
           {children}
         </main>
