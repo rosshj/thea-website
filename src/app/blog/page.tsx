@@ -1,6 +1,9 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const blogPosts = [
   {
@@ -32,67 +35,106 @@ const blogPosts = [
   },
 ];
 
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, ease: 'easeOut' }
+};
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
 export default function BlogPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-28">
-      <div className="text-center mb-20">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+      <motion.div 
+        className="text-center mb-20"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+      >
+        <motion.h1 
+          className="text-4xl font-bold text-gray-900 mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+        >
           Photography Tips & Tutorials
-        </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        </motion.h1>
+        <motion.p 
+          className="text-xl text-gray-600 max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+        >
           Learn how to master light metering and take your photography to the next level with our expert guides.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {blogPosts.map((post) => (
-          <Link
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        variants={stagger}
+        initial="initial"
+        animate="animate"
+      >
+        {blogPosts.map((post, index) => (
+          <motion.div
             key={post.id}
-            href={`/blog/${post.slug}`}
-            className="block h-full"
+            variants={fadeInUp}
+            transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
           >
-            <article className="bg-gray-50 rounded-2xl transition-all duration-200 border border-gray-100 overflow-hidden h-full flex flex-col">
-              <div className="relative aspect-square">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex items-center text-sm text-gray-500 mb-4">
-                  <time dateTime={post.date}>{post.date}</time>
-                  <span className="mx-2">•</span>
-                  <span>{post.readTime}</span>
+            <Link
+              href={`/blog/${post.slug}`}
+              className="block h-full"
+            >
+              <article className="bg-gray-50 rounded-2xl transition-all duration-200 border border-gray-100 overflow-hidden h-full flex flex-col hover:shadow-lg hover:-translate-y-1">
+                <div className="relative aspect-square">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  {post.title}
-                </h2>
-                <p className="text-gray-600 mb-6 flex-grow">
-                  {post.excerpt}
-                </p>
-                <div className="inline-flex items-center text-gray-800 hover:text-gray-600 font-medium min-h-[48px]">
-                  Read more
-                  <svg
-                    className="ml-2 w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="flex items-center text-sm text-gray-500 mb-4">
+                    <time dateTime={post.date}>{post.date}</time>
+                    <span className="mx-2">•</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                    {post.title}
+                  </h2>
+                  <p className="text-gray-600 mb-6 flex-grow">
+                    {post.excerpt}
+                  </p>
+                  <div className="inline-flex items-center text-gray-800 hover:text-gray-600 font-medium min-h-[48px]">
+                    Read more
+                    <svg
+                      className="ml-2 w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </article>
-          </Link>
+              </article>
+            </Link>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 } 

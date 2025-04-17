@@ -3,7 +3,22 @@
 import React, { useState } from 'react';
 import * as Accordion from '@radix-ui/react-accordion';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import AnimatedGradient from '@/components/ui/AnimatedGradient';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, ease: 'easeOut' }
+};
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
 
 const faqs = [
   {
@@ -99,68 +114,94 @@ export default function FAQPage() {
           transform: translateY(0);
         }
       `}</style>
-      <div className="text-center mb-20">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">
-          Frequently Asked Questions
-        </h1>
-        <p className="text-xl text-gray-600">
-          Find answers to common questions about Thea and light metering.
-        </p>
-      </div>
-
-      <Accordion.Root
-        type="single"
-        collapsible
-        className="space-y-6"
+      <motion.div 
+        className="text-center mb-20"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        {faqs.map((faq, index) => (
-          <Accordion.Item
-            key={index}
-            value={`item-${index}`}
-            className="bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden data-[state=open]:bg-white"
-          >
-            <Accordion.Header className="w-full">
-              <Accordion.Trigger 
-                className="w-full px-8 py-3 text-left flex justify-between items-center hover:bg-white transition-colors data-[state=open]:bg-white accordion-trigger min-h-[48px]"
-                style={{ position: 'relative' }}
+        <motion.h1 
+          className="text-4xl font-bold text-gray-900 mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+        >
+          Frequently Asked Questions
+        </motion.h1>
+        <motion.p 
+          className="text-xl text-gray-600"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+        >
+          Find answers to common questions about Thea and light metering.
+        </motion.p>
+      </motion.div>
+
+      <motion.div
+        variants={stagger}
+        initial="initial"
+        animate="animate"
+      >
+        <Accordion.Root
+          type="single"
+          collapsible
+          className="space-y-6"
+        >
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInUp}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+            >
+              <Accordion.Item
+                value={`item-${index}`}
+                className="bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden data-[state=open]:bg-white"
               >
-                <span className="text-lg font-medium text-gray-900">
-                  {faq.question}
-                </span>
-                <div className="icon-container">
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="18" 
-                    height="18" 
-                    viewBox="0 0 18 18"
-                    className="text-gray-500 icon-closed"
+                <Accordion.Header className="w-full">
+                  <Accordion.Trigger 
+                    className="w-full px-8 py-3 text-left flex justify-between items-center hover:bg-white transition-colors data-[state=open]:bg-white accordion-trigger min-h-[48px]"
+                    style={{ position: 'relative' }}
                   >
-                    <g className="nc-icon-wrapper" fill="currentColor">
-                      <path d="M9,13.5c-.192,0-.384-.073-.53-.22L2.22,7.03c-.293-.293-.293-.768,0-1.061s.768-.293,1.061,0l5.72,5.72,5.72-5.72c.293-.293,.768-.293,1.061,0s.293,.768,0,1.061l-6.25,6.25c-.146,.146-.338,.22-.53,.22Z"></path>
-                    </g>
-                  </svg>
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="18" 
-                    height="18" 
-                    viewBox="0 0 18 18"
-                    className="text-gray-500 icon-open"
-                  >
-                    <g className="nc-icon-wrapper" fill="currentColor">
-                      <path d="M9.53,4.72c-.293-.293-.768-.293-1.061,0L2.22,10.97c-.293,.293-.293,.768,0,1.061s.768,.293,1.061,0l5.72-5.72,5.72,5.72c.146,.146,.338,.22,.53,.22s.384-.073,.53-.22c.293-.293,.293-.768,0-1.061l-6.25-6.25Z"></path>
-                    </g>
-                  </svg>
-                </div>
-              </Accordion.Trigger>
-            </Accordion.Header>
-            <Accordion.Content className="text-gray-600 bg-white accordion-content">
-              <div className="accordion-content-inner">
-                {faq.answer}
-              </div>
-            </Accordion.Content>
-          </Accordion.Item>
-        ))}
-      </Accordion.Root>
+                    <span className="text-lg font-medium text-gray-900">
+                      {faq.question}
+                    </span>
+                    <div className="icon-container">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="18" 
+                        height="18" 
+                        viewBox="0 0 18 18"
+                        className="text-gray-500 icon-closed"
+                      >
+                        <g className="nc-icon-wrapper" fill="currentColor">
+                          <path d="M9,13.5c-.192,0-.384-.073-.53-.22L2.22,7.03c-.293-.293-.293-.768,0-1.061s.768-.293,1.061,0l5.72,5.72,5.72-5.72c.293-.293,.768-.293,1.061,0s.293,.768,0,1.061l-6.25,6.25c-.146,.146-.338,.22-.53,.22Z"></path>
+                        </g>
+                      </svg>
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="18" 
+                        height="18" 
+                        viewBox="0 0 18 18"
+                        className="text-gray-500 icon-open"
+                      >
+                        <g className="nc-icon-wrapper" fill="currentColor">
+                          <path d="M9.53,4.72c-.293-.293-.768-.293-1.061,0L2.22,10.97c-.293,.293-.293,.768,0,1.061s.768,.293,1.061,0l5.72-5.72,5.72,5.72c.146,.146,.338,.22,.53,.22s.384-.073,.53-.22c.293-.293,.293-.768,0-1.061l-6.25-6.25Z"></path>
+                        </g>
+                      </svg>
+                    </div>
+                  </Accordion.Trigger>
+                </Accordion.Header>
+                <Accordion.Content className="text-gray-600 bg-white accordion-content">
+                  <div className="accordion-content-inner">
+                    {faq.answer}
+                  </div>
+                </Accordion.Content>
+              </Accordion.Item>
+            </motion.div>
+          ))}
+        </Accordion.Root>
+      </motion.div>
     </div>
   );
 } 

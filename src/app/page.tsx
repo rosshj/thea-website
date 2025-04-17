@@ -1,22 +1,59 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import ScrollButton from '@/components/ui/ScrollButton';
 import AnimatedGradient from '@/components/ui/AnimatedGradient';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, ease: 'easeOut' }
+};
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
 
 export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative h-[calc(80vh-4rem)] flex items-center justify-center bg-white px-6 sm:px-8 lg:px-10">
-        <div className="relative max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 text-gray-900">
+        <motion.div 
+          className="relative max-w-4xl mx-auto text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
+          <motion.h1 
+            className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 text-gray-900"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+          >
             A beautiful light meter for everyone.
-          </h1>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p 
+            className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+          >
             Thea is a free, beautifully simple light meter for iPhone—made for every kind of photographer, anywhere you shoot.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+          >
             <Link
               href="https://apps.apple.com/app/thea"
               className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transition-all duration-200 min-h-[48px]"
@@ -35,15 +72,24 @@ export default function Home() {
             >
               Learn More
             </ScrollButton>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Features Grid */}
       <section id="features-grid" className="bg-white mb-10">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="gradient-orange-pink rounded-2xl overflow-hidden flex flex-col">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-10"
+            variants={stagger}
+            initial="initial"
+            animate="animate"
+            viewport={{ once: true }}
+          >
+            <motion.div
+              variants={fadeInUp}
+              className="gradient-orange-pink rounded-2xl overflow-hidden flex flex-col"
+            >
               <div className="relative aspect-square">
                 <Image
                   src="/images/home/bottom-controls.png"
@@ -58,9 +104,12 @@ export default function Home() {
                   No clutter. No confusion. Just a clean, minimal design that helps you focus on creating great photos.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="gradient-blue-yellow rounded-2xl overflow-hidden flex flex-col">
+            <motion.div
+              variants={fadeInUp}
+              className="gradient-blue-yellow rounded-2xl overflow-hidden flex flex-col"
+            >
               <div className="relative aspect-square">
                 <Image
                   src="/images/home/phone-pocket.png"
@@ -75,9 +124,12 @@ export default function Home() {
                   Your phone is always with you—so is Thea. Get quick, accurate readings anywhere you shoot.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="gradient-blue-purple rounded-2xl overflow-hidden flex flex-col">
+            <motion.div
+              variants={fadeInUp}
+              className="gradient-blue-purple rounded-2xl overflow-hidden flex flex-col"
+            >
               <div className="relative aspect-square">
                 <Image
                   src="/images/home/speed.png"
@@ -92,27 +144,46 @@ export default function Home() {
                   Thea uses your iPhone's camera to deliver real-time exposure readings—so you can shoot with confidence.
                 </p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Social Proof Section */}
       <section className="mb-10">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="bg-gray-50 rounded-3xl py-10 px-6 sm:px-8 lg:px-10">
-            <div className="text-center mb-16">
+          <motion.div 
+            className="bg-gray-50 rounded-3xl py-10 px-6 sm:px-8 lg:px-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+            >
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
                 Loved by photographers of all kinds
               </h2>
               <p className="text-xl text-gray-600">
                 Whether you're shooting city streets, medium format film, or just getting started—Thea was built to be simple, beautiful, and useful for everyone.
               </p>
-            </div>
+            </motion.div>
             
-            {/* Testimonials Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-2xl shadow-sm">
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={stagger}
+              initial="initial"
+              animate="animate"
+              viewport={{ once: true }}
+            >
+              <motion.div
+                variants={fadeInUp}
+                className="bg-white p-8 rounded-2xl shadow-sm"
+              >
                 <div className="flex -space-x-1 mb-6">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -125,9 +196,12 @@ export default function Home() {
                   "As a street photographer, I need to move quick. Thea gives me accurate readings in seconds, without any fuss."
                 </p>
                 <span className="text-sm text-gray-500">Jordan R. - Street Photographer</span>
-              </div>
+              </motion.div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-sm">
+              <motion.div
+                variants={fadeInUp}
+                className="bg-white p-8 rounded-2xl shadow-sm"
+              >
                 <div className="flex -space-x-1 mb-6">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -140,9 +214,12 @@ export default function Home() {
                   "I shoot mostly 35mm and Thea has replaced my handheld meter. It's accurate, easy to use, and always with me."
                 </p>
                 <span className="text-sm text-gray-500">Lena M. - Film Photographer</span>
-              </div>
+              </motion.div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-sm">
+              <motion.div
+                variants={fadeInUp}
+                className="bg-white p-8 rounded-2xl shadow-sm"
+              >
                 <div className="flex -space-x-1 mb-6">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -155,14 +232,20 @@ export default function Home() {
                   "I'm not a pro—I just love taking photos. Thea's design is so clean and intuitive, I actually enjoy metering now."
                 </p>
                 <span className="text-sm text-gray-500">Sam D. - Amateur Photographer</span>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="mb-16">
+      <motion.section 
+        className="mb-16"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <AnimatedGradient className="rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center">
             <h2 className="text-4xl font-bold mb-8 text-white">
@@ -185,7 +268,7 @@ export default function Home() {
             </Link>
           </AnimatedGradient>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 } 
