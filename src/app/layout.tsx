@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import MainLayout from '@/components/layout/MainLayout';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://thea.app'),
@@ -44,37 +45,39 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        {/* Favicon links - these will be dynamically updated by the ThemeSwitcher component */}
         <link
           rel="icon"
-          href="/icon-16x16.png"
+          href="/icon-light-16x16.png"
           type="image/png"
           sizes="16x16"
         />
         <link
           rel="icon"
-          href="/icon-32x32.png"
+          href="/icon-light-32x32.png"
           type="image/png"
           sizes="32x32"
         />
         <link
           rel="icon"
-          href="/icon-48x48.png"
+          href="/icon-light-48x48.png"
           type="image/png"
           sizes="48x48"
         />
         <link
           rel="icon"
-          href="/icon-96x96.png"
+          href="/icon-light-96x96.png"
           type="image/png"
           sizes="96x96"
         />
         <link
           rel="apple-touch-icon"
-          href="/icon-96x96.png"
+          href="/icon-light-96x96.png"
           sizes="96x96"
         />
       </head>
       <body>
+        <ThemeSwitcher />
         <MainLayout>{children}</MainLayout>
       </body>
     </html>
