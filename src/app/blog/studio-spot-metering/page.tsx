@@ -155,7 +155,7 @@ export default function BlogPost() {
                 It also lets you maintain consistency across shots. Once you find the exposure that works for your subject under your lighting setup, you can meter that exact same spot for every frame—so your results don't vary from shot to shot.
               </p>
               
-              <div className="relative h-96 my-10 rounded-lg overflow-hidden">
+              <div className="relative my-10 rounded-lg overflow-hidden lg:-mx-16 aspect-[3/2]">
                 <Image
                   src="/images/blog/dramatic-portrait.jpg"
                   alt="Black and white portrait of a man in a hat with dramatic lighting"

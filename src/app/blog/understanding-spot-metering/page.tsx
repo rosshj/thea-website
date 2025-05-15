@@ -147,7 +147,7 @@ export default function BlogPost() {
                 This kind of precision is especially helpful when you're shooting film, where you can't see your results immediately. Spot metering gives you a reliable way to get your exposure right, even when the lighting is tricky.
               </p>
               
-              <div className="relative h-96 my-10 rounded-lg overflow-hidden">
+              <div className="relative my-10 rounded-lg overflow-hidden lg:-mx-16 aspect-[3/2]">
                 <Image
                   src="/images/blog/window-portrait-2.jpg"
                   alt="Woman with dark hair by a window in low light - perfect for spot metering"

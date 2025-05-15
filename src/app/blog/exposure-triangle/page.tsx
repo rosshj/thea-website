@@ -259,7 +259,7 @@ export default function BlogPost() {
                 With film, ISO is set by the roll you're using (like ISO 400 film), so you'll want to meter your light based on that fixed number.
               </p>
               
-              <div className="relative h-96 my-10 rounded-lg overflow-hidden">
+              <div className="relative my-10 rounded-lg overflow-hidden lg:-mx-16 aspect-[3/2]">
                 <Image
                   src="/images/blog/exposure-comparison.jpg"
                   alt="Three versions of the same photo with different exposure settings"

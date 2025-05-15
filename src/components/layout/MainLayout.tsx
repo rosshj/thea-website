@@ -218,7 +218,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                     <path d="M15.3653 3.793C16.0815 2.87425 16.5703 1.63176 16.373 0.305766C15.203 0.386016 13.89 1.07576 13.0913 2.0455C12.3668 2.92525 11.7675 4.231 12 5.5C13.2765 5.53975 14.598 4.77775 15.3653 3.793Z" fill="currentColor" data-color="color-2"></path>
                   </g>
                 </svg>
-                Coming soon for iOS
+                Coming soon
               </Link>
             </div>
           </div>
