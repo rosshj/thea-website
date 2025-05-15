@@ -18,10 +18,11 @@ export default function AnimatedGradient({ children, className = '' }: AnimatedG
     if (!ctx) return;
 
     let time = 0;
+    // Adjusted dark grey colors for more contrast
     const colors = [
-      { r: 192, g: 72, b: 72 },   // #C04848
-      { r: 72, g: 0, b: 72 },     // #480048
-      { r: 192, g: 72, b: 72 },   // #C04848
+      { r: 45, g: 55, b: 70 },   // Lighter grey
+      { r: 10, g: 15, b: 25 },   // Darker grey
+      { r: 45, g: 55, b: 70 },   // Lighter grey (to loop smoothly)
     ];
 
     const resizeCanvas = () => {

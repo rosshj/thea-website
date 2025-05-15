@@ -55,8 +55,9 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
           >
             <Link
-              href="https://apps.apple.com/app/thea"
-              className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transition-all duration-200 min-h-[48px]"
+              href="#"
+              className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-900 transition-all duration-200 min-h-[48px] opacity-50 cursor-default"
+              onClick={(e) => e.preventDefault()}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
                 <g className="nc-icon-wrapper" fill="currentColor">
@@ -64,7 +65,7 @@ export default function Home() {
                   <path d="M15.3653 3.793C16.0815 2.87425 16.5703 1.63176 16.373 0.305766C15.203 0.386016 13.89 1.07576 13.0913 2.0455C12.3668 2.92525 11.7675 4.231 12 5.5C13.2765 5.53975 14.598 4.77775 15.3653 3.793Z" fill="currentColor" data-color="color-2"></path>
                 </g>
               </svg>
-              Download for iOS
+              Coming soon for iOS
             </Link>
             <ScrollButton
               targetId="features-grid"
@@ -255,8 +256,9 @@ export default function Home() {
               A simple, beautiful light meter built for photographers of all levels. No ads, no cost—just a tool to help you shoot with confidence.
             </p>
             <Link
-              href="https://apps.apple.com/app/thea"
-              className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-gray-900 bg-white hover:bg-gray-100 transition-all duration-200 min-h-[48px]"
+              href="#"
+              className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-white bg-gray-900 hover:bg-gray-900 transition-all duration-200 min-h-[48px] opacity-50 cursor-default"
+              onClick={(e) => e.preventDefault()}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
                 <g className="nc-icon-wrapper" fill="currentColor">
@@ -264,7 +266,7 @@ export default function Home() {
                   <path d="M15.3653 3.793C16.0815 2.87425 16.5703 1.63176 16.373 0.305766C15.203 0.386016 13.89 1.07576 13.0913 2.0455C12.3668 2.92525 11.7675 4.231 12 5.5C13.2765 5.53975 14.598 4.77775 15.3653 3.793Z" fill="currentColor" data-color="color-2"></path>
                 </g>
               </svg>
-              Download for iOS
+              Coming soon for iOS
             </Link>
           </AnimatedGradient>
         </div>
