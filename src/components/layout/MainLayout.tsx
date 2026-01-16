@@ -232,8 +232,8 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
 
-        {/* CTA Section - only shown on non-home pages */}
-        {pathname !== '/' && (
+        {/* CTA Section - hidden on home, contact, and privacy pages */}
+        {pathname !== '/' && pathname !== '/contact' && pathname !== '/privacy' && (
           <section className="mb-16">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
               <AnimatedGradient className="rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center">
