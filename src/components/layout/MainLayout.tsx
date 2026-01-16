@@ -21,6 +21,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     { name: 'Home', href: '/' },
     { name: 'Blog', href: '/blog' },
     { name: 'FAQ', href: '/faq' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const sidebarWidth = isDesktopSidebarCollapsed ? '60px' : '260px';
@@ -274,9 +275,14 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 </Link>
               </div>
               
-              <p className="text-sm text-gray-600 mb-4 md:mb-0">
-                © {new Date().getFullYear()} Thea
-              </p>
+              <div className="flex items-center gap-4 mb-4 md:mb-0">
+                <p className="text-sm text-gray-600">
+                  © {new Date().getFullYear()} Thea Apps Inc.
+                </p>
+                <Link href="/privacy" className="text-sm text-gray-600 hover:text-gray-900">
+                  Privacy Policy
+                </Link>
+              </div>
               
               <div className="flex items-center">
                 <a 
