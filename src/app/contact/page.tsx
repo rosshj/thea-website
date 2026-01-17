@@ -56,7 +56,7 @@ export default function ContactPage() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <motion.h1
-          className="text-4xl font-bold text-gray-900 mb-6"
+          className="text-4xl font-bold text-gray-900 dark:text-white mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
@@ -64,7 +64,7 @@ export default function ContactPage() {
           Contact Us
         </motion.h1>
         <motion.p
-          className="text-xl text-gray-600"
+          className="text-xl text-gray-600 dark:text-neutral-400"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
@@ -79,17 +79,17 @@ export default function ContactPage() {
         transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
       >
         {status === 'success' ? (
-          <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl p-8 text-center">
+            <div className="w-12 h-12 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Message Sent!</h3>
-            <p className="text-gray-600 mb-6">Thank you for reaching out. We&apos;ll get back to you soon.</p>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Message Sent!</h3>
+            <p className="text-gray-600 dark:text-neutral-400 mb-6">Thank you for reaching out. We&apos;ll get back to you soon.</p>
             <button
               onClick={() => setStatus('idle')}
-              className="text-gray-900 font-medium hover:underline"
+              className="text-gray-900 dark:text-white font-medium hover:underline"
             >
               Send another message
             </button>
@@ -97,7 +97,7 @@ export default function ContactPage() {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
                 Name
               </label>
               <input
@@ -107,13 +107,13 @@ export default function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-900 focus:ring-1 focus:ring-gray-900 outline-none transition-colors bg-white text-gray-900"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-neutral-800 focus:border-gray-900 dark:focus:border-white focus:ring-1 focus:ring-gray-900 dark:focus:ring-white outline-none transition-colors bg-white dark:bg-neutral-950 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-neutral-500"
                 placeholder="Your name"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
                 Email
               </label>
               <input
@@ -123,13 +123,13 @@ export default function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-900 focus:ring-1 focus:ring-gray-900 outline-none transition-colors bg-white text-gray-900"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-neutral-800 focus:border-gray-900 dark:focus:border-white focus:ring-1 focus:ring-gray-900 dark:focus:ring-white outline-none transition-colors bg-white dark:bg-neutral-950 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-neutral-500"
                 placeholder="your@email.com"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
                 Message
               </label>
               <textarea
@@ -139,13 +139,13 @@ export default function ContactPage() {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-900 focus:ring-1 focus:ring-gray-900 outline-none transition-colors bg-white text-gray-900 resize-none"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-neutral-800 focus:border-gray-900 dark:focus:border-white focus:ring-1 focus:ring-gray-900 dark:focus:ring-white outline-none transition-colors bg-white dark:bg-neutral-950 text-gray-900 dark:text-white resize-none placeholder:text-gray-400 dark:placeholder:text-neutral-500"
                 placeholder="How can we help?"
               />
             </div>
 
             {status === 'error' && (
-              <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-red-700 text-sm">
+              <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-red-700 dark:text-red-400 text-sm">
                 {errorMessage}
               </div>
             )}
@@ -153,7 +153,7 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="w-full px-6 py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed min-h-[48px]"
+              className="w-full px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-neutral-900 font-medium rounded-full hover:bg-gray-800 dark:hover:bg-neutral-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed min-h-[48px]"
             >
               {status === 'loading' ? 'Sending...' : 'Send Message'}
             </button>

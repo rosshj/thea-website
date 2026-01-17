@@ -6,11 +6,14 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import * as Dialog from '@radix-ui/react-dialog';
 import AnimatedGradient from '@/components/ui/AnimatedGradient';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
+import { useTheme } from '@/lib/ThemeContext';
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [isDesktopSidebarCollapsed, setIsDesktopSidebarCollapsed] = useState(false);
   const pathname = usePathname();
+  const { resolvedTheme } = useTheme();
 
   // Close mobile sidebar when route changes
   useEffect(() => {
@@ -27,15 +30,15 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   const sidebarWidth = isDesktopSidebarCollapsed ? '60px' : '260px';
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950 transition-colors duration-300">
       {/* Desktop Header */}
-      <header className="fixed top-0 left-0 right-0 h-16 z-50 backdrop-blur-[10px] bg-white/80 supports-[backdrop-filter]:bg-white/30 hidden xl:block">
+      <header className="fixed top-0 left-0 right-0 h-16 z-50 backdrop-blur-[10px] bg-white/80 dark:bg-neutral-950/80 supports-[backdrop-filter]:bg-white/30 dark:supports-[backdrop-filter]:bg-neutral-950/30 hidden xl:block transition-colors duration-300">
         <div className="px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/images/thea-logo.svg"
+                  src={resolvedTheme === 'dark' ? '/images/thea-logo-dark.svg' : '/images/thea-logo.svg'}
                   alt="Thea Logo"
                   width={72}
                   height={72}
@@ -44,7 +47,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
               
               {/* Sidebar Toggle Button */}
               <button 
-                className="text-gray-500 hover:text-gray-900 flex items-center justify-center rounded-full w-8 h-8 hover:bg-gray-100"
+                className="text-gray-500 hover:text-gray-900 dark:text-neutral-400 dark:hover:text-white flex items-center justify-center rounded-full w-8 h-8 hover:bg-gray-100 dark:hover:bg-neutral-800"
                 onClick={() => setIsDesktopSidebarCollapsed(!isDesktopSidebarCollapsed)}
                 aria-label={isDesktopSidebarCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
                 style={{ position: 'absolute', left: '130px' }}
@@ -71,7 +74,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             <div className="flex items-center">
               <Link
                 href="#"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-full text-white bg-gray-900 hover:bg-gray-900 min-h-[48px] opacity-50 cursor-default"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-full text-white bg-gray-900 dark:bg-white dark:text-neutral-900 hover:bg-gray-900 min-h-[48px] opacity-50 cursor-default"
                 onClick={(e) => e.preventDefault()}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
@@ -88,11 +91,11 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       </header>
 
       {/* Mobile header */}
-      <div className="xl:hidden fixed top-0 left-0 right-0 z-30 backdrop-blur-[10px] bg-white/80 supports-[backdrop-filter]:bg-white/30">
+      <div className="xl:hidden fixed top-0 left-0 right-0 z-30 backdrop-blur-[10px] bg-white/80 dark:bg-neutral-950/80 supports-[backdrop-filter]:bg-white/30 dark:supports-[backdrop-filter]:bg-neutral-950/30 transition-colors duration-300">
         <div className="px-6 sm:px-8 lg:px-10 flex items-center justify-center h-16 relative">
           <button
             onClick={() => setIsMobileSidebarOpen(true)}
-            className="text-gray-900 absolute left-4 flex items-center justify-center rounded-full w-12 h-12 bg-gray-50"
+            className="text-gray-900 dark:text-white absolute left-4 flex items-center justify-center rounded-full w-12 h-12 bg-gray-50 dark:bg-neutral-800"
             aria-label="Open navigation menu"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
@@ -104,7 +107,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </button>
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/thea-logo.svg"
+              src={resolvedTheme === 'dark' ? '/images/thea-logo-dark.svg' : '/images/thea-logo.svg'}
               alt="Thea Logo"
               width={72}
               height={72}
@@ -112,7 +115,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </Link>
           <Link
             href="#"
-            className="inline-flex items-center justify-center w-12 h-12 text-white bg-gray-900 hover:bg-gray-900 rounded-full absolute right-4 opacity-50 cursor-default"
+            className="inline-flex items-center justify-center w-12 h-12 text-white bg-gray-900 dark:bg-white dark:text-neutral-900 hover:bg-gray-900 rounded-full absolute right-4 opacity-50 cursor-default"
             onClick={(e) => e.preventDefault()}
             aria-label="Download App"
           >
@@ -131,7 +134,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         className={`fixed inset-y-0 left-0 z-20 transition-all duration-300 ease-in-out transform ${isDesktopSidebarCollapsed ? '-translate-x-full' : 'translate-x-0'} hidden xl:flex xl:flex-col`} 
         style={{ top: '4rem', width: '260px' }}
       >
-        <div className="flex-1 flex flex-col min-h-0 bg-white">
+        <div className="flex-1 flex flex-col min-h-0 bg-white dark:bg-neutral-950 transition-colors duration-300">
           <div className="flex-1 flex flex-col pt-8 overflow-y-auto">
             <nav className="px-6 sm:px-8 lg:px-10 space-y-1">
               {navItems.map((item) => {
@@ -142,10 +145,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`group flex items-center px-4 py-3 text-sm font-medium rounded-md min-h-[48px]
+                    className={`group flex items-center px-6 py-3 text-sm font-medium rounded-full min-h-[48px]
                       ${isActive 
-                        ? 'text-gray-900 bg-gray-50' 
-                        : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}
+                        ? 'text-gray-900 dark:text-white bg-gray-100 dark:bg-neutral-800' 
+                        : 'text-gray-600 dark:text-neutral-400 hover:bg-gray-100 dark:hover:bg-neutral-800 hover:text-gray-900 dark:hover:text-white'}`}
                     title={item.name}
                   >
                     <span>{item.name}</span>
@@ -153,6 +156,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 );
               })}
             </nav>
+          </div>
+          {/* Theme Switcher at bottom of sidebar */}
+          <div className="px-6 sm:px-8 lg:px-10 pb-6">
+            <ThemeSwitcher />
           </div>
         </div>
       </div>
@@ -162,13 +169,13 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
            onClick={() => setIsMobileSidebarOpen(false)}>
       </div>
       <div 
-        className={`fixed left-4 top-4 bottom-4 w-64 bg-gray-50 z-50 xl:hidden transform transition-transform duration-300 ease-in-out rounded-2xl ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-[calc(100%+16px)]'}`}
+        className={`fixed left-4 top-4 bottom-4 w-64 bg-white dark:bg-neutral-900 z-50 xl:hidden transform transition-transform duration-300 ease-in-out rounded-2xl ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-[calc(100%+16px)]'}`}
       >
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between h-16 px-4">
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/thea-logo.svg"
+                src={resolvedTheme === 'dark' ? '/images/thea-logo-dark.svg' : '/images/thea-logo.svg'}
                 alt="Thea Logo"
                 width={72}
                 height={72}
@@ -176,7 +183,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <button
               onClick={() => setIsMobileSidebarOpen(false)}
-              className="text-gray-500 hover:text-gray-900 flex items-center justify-center rounded-full w-12 h-12 hover:bg-gray-100"
+              className="text-gray-500 dark:text-neutral-400 hover:text-gray-900 dark:hover:text-white flex items-center justify-center rounded-full w-12 h-12 hover:bg-gray-100 dark:hover:bg-neutral-800"
               aria-label="Close navigation menu"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
@@ -188,7 +195,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             </button>
           </div>
           <div className="flex-1 flex flex-col pt-6 overflow-y-auto">
-            <nav className="px-6 sm:px-8 lg:px-10 space-y-1">
+            <nav className="px-3 space-y-1">
               {navItems.map((item) => {
                 const isActive = pathname === item.href || 
                   (item.href !== '/' && pathname?.startsWith(item.href));
@@ -197,20 +204,20 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`flex items-center px-4 py-3 text-base font-medium rounded-md min-h-[48px]
+                    className={`flex items-center px-6 py-3 text-base font-medium rounded-full min-h-[48px]
                       ${isActive 
-                        ? 'text-gray-900 bg-gray-50' 
-                        : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}
+                        ? 'text-gray-900 dark:text-white bg-gray-100 dark:bg-neutral-800' 
+                        : 'text-gray-600 dark:text-neutral-400 hover:bg-gray-100 dark:hover:bg-neutral-800 hover:text-gray-900 dark:hover:text-white'}`}
                   >
                     <span>{item.name}</span>
                   </Link>
                 );
               })}
             </nav>
-            <div className="px-6 sm:px-8 lg:px-10 mt-6">
+            <div className="px-3 mt-6">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium rounded-full text-white bg-gray-900 hover:bg-gray-900 min-h-[48px] opacity-50 cursor-default"
+                className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium rounded-full text-white bg-gray-900 dark:bg-white dark:text-neutral-900 hover:bg-gray-900 min-h-[48px] opacity-50 cursor-default"
                 onClick={(e) => e.preventDefault()}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
@@ -221,6 +228,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 </svg>
                 Coming soon
               </Link>
+            </div>
+            {/* Theme Switcher in mobile sidebar */}
+            <div className="px-3 mt-auto pb-6 pt-6">
+              <ThemeSwitcher />
             </div>
           </div>
         </div>
@@ -237,15 +248,15 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           <section className="mb-16">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
               <AnimatedGradient className="rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center">
-                <h2 className="text-4xl font-bold mb-8 text-white">
+                <h2 className="text-4xl font-bold mb-8 text-white dark:text-gray-900">
                   Try Thea—free on iOS.
                 </h2>
-                <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+                <p className="text-xl text-gray-200 dark:text-gray-700 mb-10 max-w-2xl mx-auto">
                   A simple, beautiful light meter built for photographers of all levels. No ads, no cost—just a tool to help you shoot with confidence.
                 </p>
                 <Link
                   href="#"
-                  className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-white bg-gray-900 hover:bg-gray-900 transition-all duration-200 min-h-[48px] opacity-50 cursor-default"
+                  className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-white dark:text-white bg-gray-900 dark:bg-gray-900 hover:bg-gray-900 transition-all duration-200 min-h-[48px] opacity-50 cursor-default"
                   onClick={(e) => e.preventDefault()}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
@@ -261,13 +272,13 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </section>
         )}
 
-        <footer className="bg-white">
+        <footer className="bg-white dark:bg-neutral-950 transition-colors duration-300">
           <div className="mx-auto px-6 sm:px-8 lg:px-10 py-6">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="flex items-center mb-4 md:mb-0">
                 <Link href="/" className="flex items-center">
                   <Image
-                    src="/images/thea-logo.svg"
+                    src={resolvedTheme === 'dark' ? '/images/thea-logo-dark.svg' : '/images/thea-logo.svg'}
                     alt="Thea Logo"
                     width={48}
                     height={48}
@@ -276,10 +287,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
               </div>
               
               <div className="flex items-center gap-4 mb-4 md:mb-0">
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-neutral-400">
                   © {new Date().getFullYear()} Thea Apps Inc.
                 </p>
-                <Link href="/privacy" className="text-sm text-gray-600 hover:text-gray-900">
+                <Link href="/privacy" className="text-sm text-gray-600 dark:text-neutral-400 hover:text-gray-900 dark:hover:text-white">
                   Privacy Policy
                 </Link>
               </div>
@@ -289,7 +300,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                   href="https://instagram.com/theaapp" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-600 hover:text-gray-900"
+                  className="text-gray-600 dark:text-neutral-400 hover:text-gray-900 dark:hover:text-white"
                   aria-label="Instagram"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

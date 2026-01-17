@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[calc(80vh-4rem)] flex items-center justify-center bg-white px-6 sm:px-8 lg:px-10 mb-6 sm:mb-10">
+      <section className="relative h-[calc(80vh-4rem)] flex items-center justify-center bg-white dark:bg-neutral-950 px-6 sm:px-8 lg:px-10 mb-6 sm:mb-10 transition-colors duration-300">
         <motion.div 
           className="relative max-w-4xl mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ export default function Home() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <motion.h1 
-            className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 text-gray-900"
+            className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 text-gray-900 dark:text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
@@ -41,7 +41,7 @@ export default function Home() {
             A beautiful light meter for everyone.
           </motion.h1>
           <motion.p 
-            className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto"
+            className="text-xl text-gray-600 dark:text-neutral-400 mb-10 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
@@ -56,7 +56,7 @@ export default function Home() {
           >
             <Link
               href="#"
-              className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-900 transition-all duration-200 min-h-[48px] opacity-50 cursor-default"
+              className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full text-white bg-gray-900 dark:bg-white dark:text-neutral-900 hover:bg-gray-900 transition-all duration-200 min-h-[48px] opacity-50 cursor-default"
               onClick={(e) => e.preventDefault()}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
@@ -69,7 +69,7 @@ export default function Home() {
             </Link>
             <ScrollButton
               targetId="features-grid"
-              className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 min-h-[48px]"
+              className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-neutral-300 bg-white dark:bg-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-700 transition-all duration-200 min-h-[48px]"
             >
               Learn More
             </ScrollButton>
@@ -78,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* Features Grid */}
-      <section id="features-grid" className="bg-white mb-10 pt-8 sm:pt-6">
+      <section id="features-grid" className="bg-white dark:bg-neutral-950 mb-10 pt-8 sm:pt-6 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-10"
@@ -100,8 +100,8 @@ export default function Home() {
                 />
               </div>
               <div className="p-8 gradient-box bg-white/10 flex-1">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">An intuitive interface</h3>
-                <p className="text-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">An intuitive interface</h3>
+                <p className="text-gray-700 dark:text-neutral-300">
                   No clutter. No confusion. Just a clean, minimal design that helps you focus on creating great photos.
                 </p>
               </div>
@@ -120,8 +120,8 @@ export default function Home() {
                 />
               </div>
               <div className="p-8 gradient-box bg-white/10 flex-1">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">A meter wherever you go</h3>
-                <p className="text-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">A meter wherever you go</h3>
+                <p className="text-gray-700 dark:text-neutral-300">
                   Your phone is always with you—so is Thea. Get quick, accurate readings anywhere you shoot.
                 </p>
               </div>
@@ -140,8 +140,8 @@ export default function Home() {
                 />
               </div>
               <div className="p-8 gradient-box bg-white/10 flex-1">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Accurate readings</h3>
-                <p className="text-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Accurate readings</h3>
+                <p className="text-gray-700 dark:text-neutral-300">
                   Thea uses your iPhone's camera to deliver real-time exposure readings—so you can shoot with confidence.
                 </p>
               </div>
@@ -154,7 +154,7 @@ export default function Home() {
       <section className="mb-10">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <motion.div 
-            className="bg-gray-50 rounded-3xl py-10 px-6 sm:px-8 lg:px-10"
+            className="bg-gray-50 dark:bg-neutral-800/10 rounded-3xl py-10 px-6 sm:px-8 lg:px-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -166,10 +166,10 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 Loved by photographers of all kinds
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-neutral-400">
                 Whether you're shooting city streets, medium format film, or just getting started—Thea was built to be simple, beautiful, and useful for everyone.
               </p>
             </motion.div>
@@ -183,7 +183,7 @@ export default function Home() {
             >
               <motion.div
                 variants={fadeInUp}
-                className="bg-white p-8 rounded-2xl shadow-sm"
+                className="bg-white dark:bg-white/[0.02] p-8 rounded-2xl shadow-sm border border-transparent dark:border-white/[0.03]"
               >
                 <div className="flex -space-x-1 mb-6">
                   {[...Array(5)].map((_, i) => (
@@ -192,16 +192,16 @@ export default function Home() {
                     </svg>
                   ))}
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Made for the streets.</h4>
-                <p className="text-gray-600 mb-4">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Made for the streets.</h4>
+                <p className="text-gray-600 dark:text-neutral-400 mb-4">
                   "As a street photographer, I need to move quick. Thea gives me accurate readings in seconds, without any fuss."
                 </p>
-                <span className="text-sm text-gray-500">Jordan R. - Street Photographer</span>
+                <span className="text-sm text-gray-500 dark:text-neutral-500">Jordan R. - Street Photographer</span>
               </motion.div>
 
               <motion.div
                 variants={fadeInUp}
-                className="bg-white p-8 rounded-2xl shadow-sm"
+                className="bg-white dark:bg-white/[0.02] p-8 rounded-2xl shadow-sm border border-transparent dark:border-white/[0.03]"
               >
                 <div className="flex -space-x-1 mb-6">
                   {[...Array(5)].map((_, i) => (
@@ -210,16 +210,16 @@ export default function Home() {
                     </svg>
                   ))}
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">A perfect light meter for film.</h4>
-                <p className="text-gray-600 mb-4">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">A perfect light meter for film.</h4>
+                <p className="text-gray-600 dark:text-neutral-400 mb-4">
                   "I shoot mostly 35mm and Thea has replaced my handheld meter. It's accurate, easy to use, and always with me."
                 </p>
-                <span className="text-sm text-gray-500">Lena M. - Film Photographer</span>
+                <span className="text-sm text-gray-500 dark:text-neutral-500">Lena M. - Film Photographer</span>
               </motion.div>
 
               <motion.div
                 variants={fadeInUp}
-                className="bg-white p-8 rounded-2xl shadow-sm"
+                className="bg-white dark:bg-white/[0.02] p-8 rounded-2xl shadow-sm border border-transparent dark:border-white/[0.03]"
               >
                 <div className="flex -space-x-1 mb-6">
                   {[...Array(5)].map((_, i) => (
@@ -228,11 +228,11 @@ export default function Home() {
                     </svg>
                   ))}
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Simple, elegant, and exactly what I need.</h4>
-                <p className="text-gray-600 mb-4">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Simple, elegant, and exactly what I need.</h4>
+                <p className="text-gray-600 dark:text-neutral-400 mb-4">
                   "I'm not a pro—I just love taking photos. Thea's design is so clean and intuitive, I actually enjoy metering now."
                 </p>
-                <span className="text-sm text-gray-500">Sam D. - Amateur Photographer</span>
+                <span className="text-sm text-gray-500 dark:text-neutral-500">Sam D. - Amateur Photographer</span>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -249,15 +249,15 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <AnimatedGradient className="rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center">
-            <h2 className="text-4xl font-bold mb-8 text-white">
+            <h2 className="text-4xl font-bold mb-8 text-white dark:text-gray-900">
               Try Thea—free on iOS.
             </h2>
-            <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-200 dark:text-gray-700 mb-10 max-w-2xl mx-auto">
               A simple, beautiful light meter built for photographers of all levels. No ads, no cost—just a tool to help you shoot with confidence.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-white bg-gray-900 hover:bg-gray-900 transition-all duration-200 min-h-[48px] opacity-50 cursor-default"
+              className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-white dark:text-white bg-gray-900 dark:bg-gray-900 hover:bg-gray-900 transition-all duration-200 min-h-[48px] opacity-50 cursor-default"
               onClick={(e) => e.preventDefault()}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">

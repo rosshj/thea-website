@@ -1,33 +1,66 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useTheme } from '@/lib/ThemeContext';
 
 export default function ThemeSwitcher() {
-  useEffect(() => {
-    const updateFavicon = () => {
-      const darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const sizes = ['16x16', '32x32', '48x48', '96x96'];
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <div className="flex items-center gap-1">
+      <button
+        onClick={() => setTheme('system')}
+        className={`p-2 rounded-full transition-all ${
+          theme === 'system'
+            ? 'bg-gray-200 dark:bg-neutral-700 shadow-sm text-gray-900 dark:text-white'
+            : 'text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:hover:text-neutral-300'
+        }`}
+        aria-label="System theme"
+        title="System"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/>
+          <line x1="8" x2="16" y1="21" y2="21"/>
+          <line x1="12" x2="12" y1="17" y2="21"/>
+        </svg>
+      </button>
       
-      sizes.forEach(size => {
-        const iconLinks = document.querySelectorAll(`link[sizes="${size}"]`);
-        iconLinks.forEach(link => {
-          if (link instanceof HTMLLinkElement) {
-            link.href = darkMode ? `/icon-dark-${size}.png` : `/icon-light-${size}.png`;
-          }
-        });
-      });
-    };
-    
-    // Run initially
-    updateFavicon();
-    
-    // Set up event listener for theme changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    mediaQuery.addEventListener('change', updateFavicon);
-    
-    // Clean up
-    return () => mediaQuery.removeEventListener('change', updateFavicon);
-  }, []);
-  
-  return null; // This component doesn't render anything
-} 
+      <button
+        onClick={() => setTheme('light')}
+        className={`p-2 rounded-full transition-all ${
+          theme === 'light'
+            ? 'bg-gray-200 dark:bg-neutral-700 shadow-sm text-gray-900 dark:text-white'
+            : 'text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:hover:text-neutral-300'
+        }`}
+        aria-label="Light mode"
+        title="Light"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2"/>
+          <path d="M12 20v2"/>
+          <path d="m4.93 4.93 1.41 1.41"/>
+          <path d="m17.66 17.66 1.41 1.41"/>
+          <path d="M2 12h2"/>
+          <path d="M20 12h2"/>
+          <path d="m6.34 17.66-1.41 1.41"/>
+          <path d="m19.07 4.93-1.41 1.41"/>
+        </svg>
+      </button>
+      
+      <button
+        onClick={() => setTheme('dark')}
+        className={`p-2 rounded-full transition-all ${
+          theme === 'dark'
+            ? 'bg-gray-200 dark:bg-neutral-700 shadow-sm text-gray-900 dark:text-white'
+            : 'text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:hover:text-neutral-300'
+        }`}
+        aria-label="Dark mode"
+        title="Dark"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
+    </div>
+  );
+}

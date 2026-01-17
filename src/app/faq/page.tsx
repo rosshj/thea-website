@@ -193,7 +193,7 @@ export default function FAQPage() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <motion.h1 
-          className="text-4xl font-bold text-gray-900 mb-6"
+          className="text-4xl font-bold text-gray-900 dark:text-white mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
@@ -201,7 +201,7 @@ export default function FAQPage() {
           Frequently Asked Questions
         </motion.h1>
         <motion.p 
-          className="text-xl text-gray-600"
+          className="text-xl text-gray-600 dark:text-neutral-400"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
@@ -228,13 +228,13 @@ export default function FAQPage() {
             >
               <Accordion.Item
                 value={`item-${index}`}
-                className="accordion-item bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden data-[state=open]:bg-white data-[state=open]:border-gray-200"
+                className="accordion-item bg-gray-50 dark:bg-neutral-800/10 rounded-2xl border border-gray-100 dark:border-neutral-700/10 overflow-hidden data-[state=open]:bg-white dark:data-[state=open]:bg-neutral-800/15 data-[state=open]:border-gray-200 dark:data-[state=open]:border-neutral-600/15"
               >
                 <Accordion.Header className="w-full">
                   <Accordion.Trigger 
-                    className="w-full px-8 py-5 text-left flex justify-between items-center gap-4 hover:bg-white/50 transition-colors data-[state=open]:bg-white accordion-trigger min-h-[48px]"
+                    className="w-full px-8 py-5 text-left flex justify-between items-center gap-4 hover:bg-white/50 dark:hover:bg-neutral-700/30 transition-colors data-[state=open]:bg-white dark:data-[state=open]:bg-transparent accordion-trigger min-h-[48px]"
                   >
-                    <span className="text-lg font-medium text-gray-900">
+                    <span className="text-lg font-medium text-gray-900 dark:text-white">
                       {faq.question}
                     </span>
                     <svg 
@@ -242,7 +242,7 @@ export default function FAQPage() {
                       width="18" 
                       height="18" 
                       viewBox="0 0 18 18"
-                      className="text-gray-400 accordion-chevron"
+                      className="text-gray-400 dark:text-neutral-500 accordion-chevron"
                     >
                       <path 
                         fill="currentColor"
@@ -251,7 +251,7 @@ export default function FAQPage() {
                     </svg>
                   </Accordion.Trigger>
                 </Accordion.Header>
-                <Accordion.Content className="text-gray-600 bg-white accordion-content">
+                <Accordion.Content className="text-gray-600 dark:text-neutral-400 bg-white dark:bg-transparent accordion-content">
                   <div className="accordion-content-inner">
                     {faq.answer}
                   </div>

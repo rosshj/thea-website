@@ -59,7 +59,7 @@ export default function BlogPage() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <motion.h1 
-          className="text-4xl font-bold text-gray-900 mb-6"
+          className="text-4xl font-bold text-gray-900 dark:text-white mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
@@ -67,7 +67,7 @@ export default function BlogPage() {
           Photography Tips & Tutorials
         </motion.h1>
         <motion.p 
-          className="text-xl text-gray-600 max-w-2xl mx-auto"
+          className="text-xl text-gray-600 dark:text-neutral-400 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
@@ -92,7 +92,7 @@ export default function BlogPage() {
               href={`/blog/${post.slug}`}
               className="block h-full"
             >
-              <article className="bg-gray-50 rounded-2xl transition-all duration-200 border border-gray-100 overflow-hidden h-full flex flex-col hover:shadow-lg hover:-translate-y-1">
+                <article className="bg-gray-50 dark:bg-neutral-800/10 rounded-2xl transition-all duration-200 border border-gray-100 dark:border-neutral-700/10 overflow-hidden h-full flex flex-col hover:shadow-lg dark:hover:shadow-neutral-900/20 hover:-translate-y-1">
                 <div className="relative aspect-square">
                   <Image
                     src={post.image}
@@ -102,18 +102,18 @@ export default function BlogPage() {
                   />
                 </div>
                 <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <div className="flex items-center text-sm text-gray-500 dark:text-neutral-500 mb-4">
                     <time dateTime={post.date}>{post.date}</time>
                     <span className="mx-2">•</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                  <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
                     {post.title}
                   </h2>
-                  <p className="text-gray-600 mb-6 flex-grow">
+                  <p className="text-gray-600 dark:text-neutral-400 mb-6 flex-grow">
                     {post.excerpt}
                   </p>
-                  <div className="inline-flex items-center text-gray-800 hover:text-gray-600 font-medium min-h-[48px]">
+                  <div className="inline-flex items-center text-gray-800 dark:text-neutral-300 hover:text-gray-600 dark:hover:text-white font-medium min-h-[48px]">
                     Read more
                     <svg
                       className="ml-2 w-4 h-4"
