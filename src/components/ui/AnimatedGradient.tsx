@@ -23,15 +23,15 @@ export default function AnimatedGradient({ children, className = '' }: AnimatedG
     
     // Different colors based on theme
     const lightColors = [
-      { r: 124, g: 196, b: 228 },  // Blue
-      { r: 255, g: 222, b: 89 },   // Yellow
-      { r: 86, g: 204, b: 242 },   // Light blue
+      { r: 45, g: 55, b: 70 },    // Lighter grey
+      { r: 10, g: 15, b: 25 },    // Darker grey
+      { r: 45, g: 55, b: 70 },    // Lighter grey (to loop smoothly)
     ];
     
     const darkColors = [
-      { r: 180, g: 220, b: 250 },  // Lighter blue
-      { r: 255, g: 240, b: 150 },  // Lighter yellow
-      { r: 150, g: 230, b: 255 },  // Lighter cyan
+      { r: 180, g: 185, b: 195 },  // Lighter grey
+      { r: 220, g: 225, b: 230 },  // Even lighter grey
+      { r: 180, g: 185, b: 195 },  // Lighter grey (to loop smoothly)
     ];
     
     const colors = resolvedTheme === 'dark' ? darkColors : lightColors;
