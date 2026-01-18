@@ -1,19 +1,23 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import * as Dialog from '@radix-ui/react-dialog';
 import AnimatedGradient from '@/components/ui/AnimatedGradient';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
 import { useTheme } from '@/lib/ThemeContext';
 
-export default function MainLayout({ children }: { children: React.ReactNode }) {
+function MainLayoutContent({ children }: { children: React.ReactNode }) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [isDesktopSidebarCollapsed, setIsDesktopSidebarCollapsed] = useState(false);
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { resolvedTheme } = useTheme();
+  
+  // Check if we're in embed mode (for webview usage)
+  const isEmbedded = searchParams?.get('embed') === 'true';
 
   // Close mobile sidebar when route changes
   useEffect(() => {
@@ -31,7 +35,8 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950 transition-colors duration-300">
-      {/* Desktop Header */}
+      {/* Desktop Header - hidden in embed mode */}
+      {!isEmbedded && (
       <header className="fixed top-0 left-0 right-0 h-16 z-50 backdrop-blur-[10px] bg-white/80 dark:bg-neutral-950/80 supports-[backdrop-filter]:bg-white/30 dark:supports-[backdrop-filter]:bg-neutral-950/30 hidden xl:block transition-colors duration-300">
         <div className="px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16">
@@ -89,8 +94,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </div>
         </div>
       </header>
+      )}
 
-      {/* Mobile header */}
+      {/* Mobile header - hidden in embed mode */}
+      {!isEmbedded && (
       <div className="xl:hidden fixed top-0 left-0 right-0 z-30 backdrop-blur-[10px] bg-white/80 dark:bg-neutral-950/80 supports-[backdrop-filter]:bg-white/30 dark:supports-[backdrop-filter]:bg-neutral-950/30 transition-colors duration-300">
         <div className="px-6 sm:px-8 lg:px-10 flex items-center justify-center h-16 relative">
           <button
@@ -128,8 +135,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </Link>
         </div>
       </div>
+      )}
 
-      {/* Desktop Sidebar */}
+      {/* Desktop Sidebar - hidden in embed mode */}
+      {!isEmbedded && (
       <div 
         className={`fixed inset-y-0 left-0 z-20 transition-all duration-300 ease-in-out transform ${isDesktopSidebarCollapsed ? '-translate-x-full' : 'translate-x-0'} hidden xl:flex xl:flex-col`} 
         style={{ top: '4rem', width: '260px' }}
@@ -163,8 +172,11 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </div>
         </div>
       </div>
+      )}
 
-      {/* Silk-style Mobile Sidebar */}
+      {/* Silk-style Mobile Sidebar - hidden in embed mode */}
+      {!isEmbedded && (
+      <>
       <div className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 xl:hidden transition-opacity duration-300 ${isMobileSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
            onClick={() => setIsMobileSidebarOpen(false)}>
       </div>
@@ -236,15 +248,17 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </div>
         </div>
       </div>
+      </>
+      )}
 
       {/* Main content */}
-      <div className={`flex flex-col flex-1 mt-16 transition-all duration-300 ease-in-out ${isDesktopSidebarCollapsed ? 'xl:ml-0' : 'xl:ml-[260px]'}`}>
+      <div className={`flex flex-col flex-1 transition-all duration-300 ease-in-out ${isEmbedded ? '' : 'mt-16'} ${isEmbedded ? '' : (isDesktopSidebarCollapsed ? 'xl:ml-0' : 'xl:ml-[260px]')}`}>
         <main className="flex-1">
           {children}
         </main>
 
-        {/* CTA Section - hidden on home, contact, and privacy pages */}
-        {pathname !== '/' && pathname !== '/contact' && pathname !== '/privacy' && (
+        {/* CTA Section - hidden on home, contact, privacy pages, and in embed mode */}
+        {!isEmbedded && pathname !== '/' && pathname !== '/contact' && pathname !== '/privacy' && (
           <section className="mb-16">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
               <AnimatedGradient className="rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center">
@@ -272,6 +286,8 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </section>
         )}
 
+        {/* Footer - hidden in embed mode */}
+        {!isEmbedded && (
         <footer className="bg-white dark:bg-neutral-950 transition-colors duration-300">
           <div className="mx-auto px-6 sm:px-8 lg:px-10 py-6">
             <div className="flex flex-col md:flex-row items-center justify-between">
@@ -311,7 +327,21 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
         </footer>
+        )}
       </div>
     </div>
+  );
+}
+
+// Wrap in Suspense for useSearchParams
+export default function MainLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950 transition-colors duration-300">
+        <div className="flex-1" />
+      </div>
+    }>
+      <MainLayoutContent>{children}</MainLayoutContent>
+    </Suspense>
   );
 } 

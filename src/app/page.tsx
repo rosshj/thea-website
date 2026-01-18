@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import ScrollButton from '@/components/ui/ScrollButton';
 import AnimatedGradient from '@/components/ui/AnimatedGradient';
@@ -21,7 +22,10 @@ const stagger = {
   }
 };
 
-export default function Home() {
+function HomeContent() {
+  const searchParams = useSearchParams();
+  const isEmbedded = searchParams?.get('embed') === 'true';
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -54,6 +58,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
           >
+            {/* Download button - hidden in embed mode */}
+            {!isEmbedded && (
             <Link
               href="#"
               className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full text-white bg-gray-900 dark:bg-white dark:text-neutral-900 hover:bg-gray-900 transition-all duration-200 min-h-[48px] opacity-50 cursor-default"
@@ -67,6 +73,7 @@ export default function Home() {
               </svg>
               Coming soon for iOS
             </Link>
+            )}
             <ScrollButton
               targetId="features-grid"
               className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-neutral-300 bg-white dark:bg-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-700 transition-all duration-200 min-h-[48px]"
@@ -239,7 +246,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - hidden in embed mode */}
+      {!isEmbedded && (
       <motion.section 
         className="mb-16"
         initial={{ opacity: 0, y: 20 }}
@@ -271,6 +279,16 @@ export default function Home() {
           </AnimatedGradient>
         </div>
       </motion.section>
+      )}
     </div>
+  );
+}
+
+// Wrap in Suspense for useSearchParams
+export default function Home() {
+  return (
+    <Suspense fallback={<div className="flex flex-col" />}>
+      <HomeContent />
+    </Suspense>
   );
 } 
