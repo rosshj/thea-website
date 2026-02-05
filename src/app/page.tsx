@@ -103,6 +103,7 @@ function HomeContent() {
                   src="/images/home/bottom-controls.png"
                   alt="Camera settings display"
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -123,6 +124,7 @@ function HomeContent() {
                   src="/images/home/phone-pocket.png"
                   alt="Person with iPhone in pocket"
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -143,6 +145,7 @@ function HomeContent() {
                   src="/images/home/speed.png"
                   alt="Medium format film camera with waterfall view in viewfinder"
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -203,7 +206,7 @@ function HomeContent() {
                 <p className="text-gray-600 dark:text-neutral-400 mb-4">
                   "As a street photographer, I need to move quick. Thea gives me accurate readings in seconds, without any fuss."
                 </p>
-                <span className="text-sm text-gray-500 dark:text-neutral-500">Jordan R. - Street Photographer</span>
+                <span className="text-sm text-gray-600 dark:text-neutral-400">Jordan R. - Street Photographer</span>
               </motion.div>
 
               <motion.div
@@ -221,7 +224,7 @@ function HomeContent() {
                 <p className="text-gray-600 dark:text-neutral-400 mb-4">
                   "I shoot mostly 35mm and Thea has replaced my handheld meter. It's accurate, easy to use, and always with me."
                 </p>
-                <span className="text-sm text-gray-500 dark:text-neutral-500">Lena M. - Film Photographer</span>
+                <span className="text-sm text-gray-600 dark:text-neutral-400">Lena M. - Film Photographer</span>
               </motion.div>
 
               <motion.div
@@ -239,7 +242,7 @@ function HomeContent() {
                 <p className="text-gray-600 dark:text-neutral-400 mb-4">
                   "I'm not a pro—I just love taking photos. Thea's design is so clean and intuitive, I actually enjoy metering now."
                 </p>
-                <span className="text-sm text-gray-500 dark:text-neutral-500">Sam D. - Amateur Photographer</span>
+                <span className="text-sm text-gray-600 dark:text-neutral-400">Sam D. - Amateur Photographer</span>
               </motion.div>
             </motion.div>
           </motion.div>

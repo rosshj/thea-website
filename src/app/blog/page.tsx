@@ -102,7 +102,7 @@ export default function BlogPage() {
                   />
                 </div>
                 <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center text-sm text-gray-500 dark:text-neutral-500 mb-4">
+                  <div className="flex items-center text-sm text-gray-600 dark:text-neutral-400 mb-4">
                     <time dateTime={post.date}>{post.date}</time>
                     <span className="mx-2">•</span>
                     <span>{post.readTime}</span>

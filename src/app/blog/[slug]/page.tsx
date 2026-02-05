@@ -32,7 +32,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       )}
       
       <header className="mb-8">
-        <div className="flex items-center text-sm text-gray-500 dark:text-neutral-500 mb-4">
+        <div className="flex items-center text-sm text-gray-600 dark:text-neutral-400 mb-4">
           <span>{post.date}</span>
           <span className="mx-2">•</span>
           <span>{post.readingTime}</span>
