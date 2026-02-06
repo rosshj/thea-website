@@ -9,10 +9,10 @@ export default function ThemeSwitcher() {
     <div className="flex items-center gap-1">
       <button
         onClick={() => setTheme('system')}
-        className={`w-12 h-12 flex items-center justify-center rounded-full transition-all ${
+        className={`w-12 h-12 flex items-center justify-center rounded-full transition-all duration-200 ${
           theme === 'system'
             ? 'bg-gray-200 dark:bg-neutral-700 shadow-sm text-gray-900 dark:text-white'
-            : 'text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:hover:text-neutral-300'
+            : 'text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:hover:text-neutral-300 hover:scale-[1.02]'
         }`}
         aria-label="System theme"
         title="System"
@@ -25,10 +25,10 @@ export default function ThemeSwitcher() {
       
       <button
         onClick={() => setTheme('light')}
-        className={`w-12 h-12 flex items-center justify-center rounded-full transition-all ${
+        className={`w-12 h-12 flex items-center justify-center rounded-full transition-all duration-200 ${
           theme === 'light'
             ? 'bg-gray-200 dark:bg-neutral-700 shadow-sm text-gray-900 dark:text-white'
-            : 'text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:hover:text-neutral-300'
+            : 'text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:hover:text-neutral-300 hover:scale-[1.02]'
         }`}
         aria-label="Light mode"
         title="Light"
@@ -48,10 +48,10 @@ export default function ThemeSwitcher() {
       
       <button
         onClick={() => setTheme('dark')}
-        className={`w-12 h-12 flex items-center justify-center rounded-full transition-all ${
+        className={`w-12 h-12 flex items-center justify-center rounded-full transition-all duration-200 ${
           theme === 'dark'
             ? 'bg-gray-200 dark:bg-neutral-700 shadow-sm text-gray-900 dark:text-white'
-            : 'text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:hover:text-neutral-300'
+            : 'text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:hover:text-neutral-300 hover:scale-[1.02]'
         }`}
         aria-label="Dark mode"
         title="Dark"
