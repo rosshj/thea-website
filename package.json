@@ -32,7 +32,8 @@
     "react-dom": "^19.1.0",
     "react-markdown": "^10.0.0",
     "resend": "^6.7.0",
-    "shell-quote": "^1.8.2"
+    "shell-quote": "^1.8.2",
+    "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@types/next": "^8.0.7",

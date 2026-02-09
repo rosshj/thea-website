@@ -7,6 +7,7 @@ import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import ScrollButton from '@/components/ui/ScrollButton';
 import AnimatedGradient from '@/components/ui/AnimatedGradient';
+import DownloadSheet from '@/components/ui/DownloadSheet';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -68,12 +69,7 @@ function HomeContent() {
           >
             {/* Download button - hidden in embed mode */}
             {!isEmbedded && (
-            <Link
-                href="https://testflight.apple.com/join/7tp4bYZh"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full text-white bg-gray-900 dark:bg-white dark:text-neutral-900 hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-[1.02] transition-all duration-200 min-h-[48px]"
-              >
+            <DownloadSheet className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full text-white bg-gray-900 dark:bg-white dark:text-neutral-900 hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-[1.02] transition-all duration-200 min-h-[48px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
                   <g className="nc-icon-wrapper" fill="currentColor">
                     <path fillRule="evenodd" clipRule="evenodd" d="M13.3091 6.48971C13.8886 6.26249 14.614 6.00143 15.6913 6.00143C17.3749 6.00143 19.1523 6.89003 20.3404 8.35613L21.0976 9.29055L20.0406 9.86449C17.5093 11.2391 17.8608 14.8633 20.4912 15.8476L21.4953 16.2234L21.0506 17.199C20.5752 18.2418 20.3284 18.7499 19.6885 19.7119C18.7074 21.192 17.3565 22.9787 15.3958 22.997C14.1793 23.0084 13.2116 22.1656 12.0053 22.172C10.7909 22.1784 9.80329 23 8.57946 22.9999L8.57073 22.9999C6.64549 22.9829 5.31146 21.3315 4.3393 19.8664C1.80437 16.0461 1.46451 11.568 3.19812 8.92508C4.43251 7.04322 6.3164 6.00413 8.20878 6.00413C9.15354 6.00413 9.91949 6.26847 10.5172 6.47873C11.1502 6.70144 11.5462 6.84 11.9823 6.84C12.4376 6.84 12.7407 6.71256 13.3091 6.48971Z" fill="currentColor"></path>
@@ -81,7 +77,7 @@ function HomeContent() {
                   </g>
                 </svg>
                 Get the beta
-              </Link>
+            </DownloadSheet>
             )}
             <ScrollButton
               targetId="features-grid"
@@ -276,12 +272,7 @@ function HomeContent() {
               A simple, beautiful light meter built for photographers of all levels. No ads, no cost—just a tool to help you shoot with confidence.
             </p>
             <p className="text-xl text-gray-200 dark:text-gray-700 mb-4 max-w-2xl mx-auto">Now in testing!</p>
-            <Link
-              href="https://testflight.apple.com/join/7tp4bYZh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 hover:scale-[1.02] transition-all duration-200 min-h-[48px]"
-            >
+            <DownloadSheet className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 hover:scale-[1.02] transition-all duration-200 min-h-[48px]">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
                 <g className="nc-icon-wrapper" fill="currentColor">
                   <path fillRule="evenodd" clipRule="evenodd" d="M13.3091 6.48971C13.8886 6.26249 14.614 6.00143 15.6913 6.00143C17.3749 6.00143 19.1523 6.89003 20.3404 8.35613L21.0976 9.29055L20.0406 9.86449C17.5093 11.2391 17.8608 14.8633 20.4912 15.8476L21.4953 16.2234L21.0506 17.199C20.5752 18.2418 20.3284 18.7499 19.6885 19.7119C18.7074 21.192 17.3565 22.9787 15.3958 22.997C14.1793 23.0084 13.2116 22.1656 12.0053 22.172C10.7909 22.1784 9.80329 23 8.57946 22.9999L8.57073 22.9999C6.64549 22.9829 5.31146 21.3315 4.3393 19.8664C1.80437 16.0461 1.46451 11.568 3.19812 8.92508C4.43251 7.04322 6.3164 6.00413 8.20878 6.00413C9.15354 6.00413 9.91949 6.26847 10.5172 6.47873C11.1502 6.70144 11.5462 6.84 11.9823 6.84C12.4376 6.84 12.7407 6.71256 13.3091 6.48971Z" fill="currentColor"></path>
@@ -289,7 +280,7 @@ function HomeContent() {
                 </g>
               </svg>
               Get the beta
-            </Link>
+            </DownloadSheet>
           </AnimatedGradient>
         </div>
       </motion.section>
