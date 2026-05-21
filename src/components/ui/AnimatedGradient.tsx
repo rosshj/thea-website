@@ -6,9 +6,10 @@ import { useTheme } from '@/lib/ThemeContext';
 interface AnimatedGradientProps {
   children: React.ReactNode;
   className?: string;
+  variant?: 'default' | 'yellow';
 }
 
-export default function AnimatedGradient({ children, className = '' }: AnimatedGradientProps) {
+export default function AnimatedGradient({ children, className = '', variant = 'default' }: AnimatedGradientProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { resolvedTheme } = useTheme();
 
@@ -21,7 +22,15 @@ export default function AnimatedGradient({ children, className = '' }: AnimatedG
 
     let time = 0;
     
-    // Different colors based on theme
+    // Brand yellow #FFE345 = rgb(255, 227, 69) with subtle variations for animation
+    const yellowColors = [
+      { r: 255, g: 227, b: 69 },   // Brand yellow
+      { r: 255, g: 235, b: 120 },  // Slightly lighter/warmer
+      { r: 255, g: 220, b: 50 },   // Slightly deeper
+      { r: 255, g: 227, b: 69 },   // Back to brand (loop smoothly)
+    ];
+    
+    // Different colors based on theme (default variant)
     const lightColors = [
       { r: 45, g: 55, b: 70 },    // Lighter grey
       { r: 10, g: 15, b: 25 },    // Darker grey
@@ -34,7 +43,7 @@ export default function AnimatedGradient({ children, className = '' }: AnimatedG
       { r: 180, g: 185, b: 195 },  // Lighter grey (to loop smoothly)
     ];
     
-    const colors = resolvedTheme === 'dark' ? darkColors : lightColors;
+    const colors = variant === 'yellow' ? yellowColors : (resolvedTheme === 'dark' ? darkColors : lightColors);
 
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth;
@@ -89,7 +98,7 @@ export default function AnimatedGradient({ children, className = '' }: AnimatedG
     return () => {
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, [resolvedTheme]);
+  }, [resolvedTheme, variant]);
 
   return (
     <div className={`relative overflow-hidden ${className}`}>

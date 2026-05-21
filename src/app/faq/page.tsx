@@ -23,21 +23,30 @@ const stagger = {
 const faqs: { question: string; answer: React.ReactNode }[] = [
   {
     question: 'What is Thea?',
-    answer: 'Thea is a professional-grade spot light meter app for iOS designed for photographers. It transforms your iPhone into a precise light meter, helping you calculate accurate exposure settings for both film and digital photography. With a clean, modern interface and intuitive controls, Thea makes light metering accessible for photographers of all skill levels.',
+    answer: 'Thea is a free iPhone light meter for film and digital photography. It also includes Shot Log and Rolls, so you can save captures and keep your frames organized while you shoot.',
   },
   {
     question: 'How does Thea work?',
-    answer: 'Thea uses your iPhone\'s camera to continuously measure light at the center of the frame using spot metering. It then calculates the appropriate exposure settings using the standard photographic exposure equation. Simply point your phone at your subject, and Thea will provide real-time exposure readings that you can dial into your camera.',
+    answer: 'Point your iPhone at your scene and Thea gives you a live light reading to dial into your camera. When you capture, Thea can save the key shot details so your settings and context are easy to review later.',
+  },
+  {
+    question: 'What is Shot Log?',
+    answer: 'Shot Log saves every capture with key details, including settings, time, location, and notes. It gives you a clear history of what you shot and how you shot it.',
+  },
+  {
+    question: 'What are Rolls?',
+    answer: 'Rolls let you organize frames into film rolls and keep each project grouped together. You can also export roll metadata when you want to archive or share your roll details.',
   },
   {
     question: 'What exposure modes does Thea support?',
     answer: (
       <>
-        <p className="mb-3">Thea offers three exposure modes to match your shooting style:</p>
+        <p className="mb-3">Thea offers four exposure modes to match your shooting style:</p>
         <ul className="list-disc pl-5 space-y-1">
           <li><strong>Aperture Priority:</strong> Set your desired aperture and ISO, and Thea calculates the recommended shutter speed</li>
           <li><strong>Shutter Priority:</strong> Set your desired shutter speed and ISO, and Thea calculates the recommended aperture</li>
           <li><strong>Manual:</strong> Set all values yourself, and Thea shows you the exposure offset (how many stops over or under exposed your settings are)</li>
+          <li><strong>Exposure Value (EV):</strong> Work directly in EV stops when you want to fine-tune exposure</li>
         </ul>
       </>
     ),
@@ -48,7 +57,7 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
       <>
         <p className="mb-3">Thea is ideal for:</p>
         <ul className="list-disc pl-5 space-y-1">
-          <li><strong>Film photography:</strong> Essential for cameras without built-in meters, or for overriding your camera\'s meter with spot readings</li>
+          <li><strong>Film photography:</strong> Essential for cameras without built-in meters, or for overriding your camera's meter with spot readings</li>
           <li><strong>Studio photography:</strong> Get precise readings for controlled lighting setups</li>
           <li><strong>Landscape photography:</strong> Meter specific areas of your scene for accurate exposures</li>
           <li><strong>Low light photography:</strong> Accurate readings in challenging lighting conditions</li>
@@ -59,7 +68,7 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
   },
   {
     question: 'Do I need any additional hardware?',
-    answer: 'No additional hardware is required. Thea uses your iPhone\'s built-in camera sensor to measure light. Just open the app, point at your subject, and get instant exposure readings.',
+    answer: "No additional hardware is required. Thea uses your iPhone's built-in camera sensor to measure light. Just open the app, point at your subject, and get instant exposure readings.",
   },
   {
     question: 'Is Thea compatible with my iPhone?',
@@ -67,7 +76,7 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
   },
   {
     question: 'How accurate is Thea compared to traditional light meters?',
-    answer: 'Thea uses the same exposure equation as traditional light meters and professional cameras. The accuracy depends on your iPhone\'s camera sensor, but Thea includes calibration algorithms to deliver readings comparable to dedicated handheld meters. Many photographers find Thea provides readings within a third of a stop of professional meters—more than accurate enough for most photography needs.',
+    answer: "Thea uses the same exposure equation as traditional light meters and professional cameras. The accuracy depends on your iPhone's camera sensor, but Thea includes calibration algorithms to deliver readings comparable to dedicated handheld meters. Many photographers find Thea provides readings within a third of a stop of professional meters—more than accurate enough for most photography needs.",
   },
   {
     question: 'Can I save my camera and lens settings?',
@@ -75,8 +84,8 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
       <>
         <p className="mb-3">Yes. Thea includes a Shooting Profile system that lets you save configurations for your cameras, lenses, and film stocks:</p>
         <ul className="list-disc pl-5 space-y-1">
-          <li><strong>Camera profiles:</strong> Store your camera\'s available ISO, aperture, and shutter speed ranges</li>
-          <li><strong>Lens profiles:</strong> Save your lens\'s maximum and minimum aperture values</li>
+          <li><strong>Camera profiles:</strong> Store your camera's available ISO, aperture, and shutter speed ranges</li>
+          <li><strong>Lens profiles:</strong> Save your lens's maximum and minimum aperture values</li>
           <li><strong>Film profiles:</strong> Keep track of your favorite film stocks and their ISO ratings</li>
         </ul>
         <p className="mt-3">This makes it easy to switch between different camera setups without reconfiguring settings each time.</p>
@@ -95,7 +104,7 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
           <li><strong>Exposure Compensation:</strong> -5 to +5 EV</li>
           <li><strong>Stop Increments:</strong> Full stops, half stops, or third stops</li>
         </ul>
-        <p className="mt-3">You can customize the available ranges in Settings to match your specific camera\'s capabilities.</p>
+        <p className="mt-3">You can customize the available ranges in Settings to match your specific camera's capabilities.</p>
       </>
     ),
   },
@@ -104,16 +113,16 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
     answer: 'Yes. Thea provides exposure readings that you apply to your camera manually, so it works with any camera—digital or film, regardless of brand. Whether you shoot Canon, Nikon, Sony, Fujifilm, Leica, Hasselblad, or a vintage film camera, Thea gives you the exposure values to dial in.',
   },
   {
-    question: 'Can I lock my light reading?',
-    answer: 'Yes. Thea includes a reading lock feature that freezes the current light measurement. This is useful when you want to meter a specific area of your scene, then recompose your shot without the reading changing. Simply tap to lock, and tap again to unlock and resume continuous metering.',
+    question: 'How can I move faster while metering?',
+    answer: 'Swipe-to-lock freezes the meter readout so your reading stays fixed while you work. On supported iPhones, the Action Button can add a capture to Shot Log for faster logging.',
   },
   {
     question: 'How do I know if my exposure is out of range?',
-    answer: 'When the calculated exposure exceeds your camera\'s settings range, Thea displays visual warnings. The readout will blink with an underexposure icon when there\'s not enough light for your current settings, or an overexposure icon when there\'s too much light. This helps you quickly identify when you need to adjust your ISO or other settings.',
+    answer: "When the calculated exposure exceeds your camera's settings range, Thea displays visual warnings. The readout will blink with a cloud icon when there's not enough light for your current settings, or a sun icon when there's too much light. This helps you quickly identify when you need to adjust your ISO or other settings.",
   },
   {
     question: 'Is Thea free?',
-    answer: 'Yes. Thea is completely free with no ads and no in-app purchases. It\'s built as a simple, useful tool for photographers.',
+    answer: "Yes. Thea is completely free with no ads and no in-app purchases. It's built as a simple, useful tool for photographers.",
   },
 ];
 
@@ -206,7 +215,7 @@ export default function FAQPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
         >
-          Find answers to common questions about Thea and light metering.
+          Find answers about metering, Shot Log, Rolls, and capture controls.
         </motion.p>
       </motion.div>
 

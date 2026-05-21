@@ -1,4 +1,4 @@
-'use client';
+import ObfuscatedEmail from '@/components/ObfuscatedEmail';
 
 export default function PrivacyPolicy() {
   return (
@@ -6,74 +6,71 @@ export default function PrivacyPolicy() {
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">Privacy Policy</h1>
         
         <p className="text-gray-600 dark:text-neutral-400 mb-8">
-          Last updated: January 16, 2026
+          Last updated: May 20, 2026
         </p>
 
         <div className="prose prose-gray max-w-none">
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Introduction</h2>
             <p className="text-gray-600 dark:text-neutral-400 mb-4">
-              Thea Apps Inc. (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Thea light meter application (the &quot;App&quot;).
+              Thea Apps Inc. (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to protecting your personal information. This Privacy Policy explains what data the Thea light meter application (the &quot;App&quot;) handles, and confirms that we do not collect, transmit, or store any of your personal data on our servers.
             </p>
             <p className="text-gray-600 dark:text-neutral-400 mb-4">
-              Please read this Privacy Policy carefully. By using the App, you agree to the collection and use of information in accordance with this policy.
+              Please read this Privacy Policy carefully. By using the App, you agree to the practices described in this policy.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Information We Collect</h2>
-            
+            <p className="text-gray-600 dark:text-neutral-400 mb-4">
+              Thea is designed to work entirely on your device. We — Thea Apps Inc. — do <strong>not</strong> collect, transmit, or store any of your personal data on our servers. The App does not include any analytics, advertising, or tracking SDKs. The following sections describe the limited types of data the App processes locally on your device.
+            </p>
+
             <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-3">Camera and Sensor Data</h3>
             <p className="text-gray-600 dark:text-neutral-400 mb-4">
-              The App uses your device&apos;s camera to measure light levels for photography purposes. This data is processed locally on your device and is not transmitted to our servers or any third parties.
+              The App uses your device&apos;s camera to measure light levels for photography purposes. Live video frames are sampled in memory for light metering only — they are never written to disk and never transmitted to our servers or any third parties.
             </p>
 
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-3">Device Information</h3>
+            <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-3">Location Data</h3>
             <p className="text-gray-600 dark:text-neutral-400 mb-4">
-              We may collect non-personal information about your device, including device type, operating system version, and app version, solely to improve app performance and troubleshoot issues.
+              Thea can optionally attach your device&apos;s current location to individual shot log entries so you can review where each frame was metered. Location data is only collected when you grant location permission <strong>and</strong> explicitly use the shot log feature.
             </p>
+            <ul className="list-disc pl-6 text-gray-600 dark:text-neutral-400 mb-4 space-y-2">
+              <li>Location data is stored only on your device, alongside the related shot log entry in the App&apos;s local storage.</li>
+              <li>Location data is <strong>never</strong> transmitted to our servers (we do not operate any) or to any third party.</li>
+              <li>You can decline location permission at install time or revoke it later in iOS Settings. Declining or revoking location has no effect on the App&apos;s metering functionality — only the per-shot location tag is disabled.</li>
+            </ul>
 
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-3">Usage Data</h3>
+            <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-3">App Content You Create</h3>
             <p className="text-gray-600 dark:text-neutral-400 mb-4">
-              We may collect anonymous usage statistics to understand how users interact with the App. This data is aggregated and does not identify individual users.
+              Any content you create or configure in the App — including camera profiles, lenses, films, shot logs, and rolls — is stored only on your device in the App&apos;s local storage. None of this data leaves your device.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">How We Use Your Information</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">How the App Uses Your Information</h2>
             <p className="text-gray-600 dark:text-neutral-400 mb-4">
-              Thea Apps Inc. uses the information we collect for the following purposes:
+              All data described above is used exclusively on your device, for the following purposes:
             </p>
             <ul className="list-disc pl-6 text-gray-600 dark:text-neutral-400 mb-4 space-y-2">
               <li>To provide and maintain the App&apos;s light metering functionality</li>
-              <li>To improve, personalize, and expand the App</li>
-              <li>To understand and analyze how you use the App</li>
-              <li>To develop new products, services, features, and functionality</li>
-              <li>To communicate with you about updates or changes to the App</li>
+              <li>To save the camera profiles, lenses, films, shot logs, and rolls you choose to create</li>
+              <li>To optionally tag shot log entries with the location at which they were recorded</li>
             </ul>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Data Storage and Security</h2>
             <p className="text-gray-600 dark:text-neutral-400 mb-4">
-              Light metering data is processed locally on your device and is not stored on our servers. We implement appropriate technical and organizational security measures to protect any information we do collect.
+              All data the App handles — including light metering frames, location, and any content you create — stays on your device. We do not operate servers that receive or store your data. Data is protected by the standard iOS app sandbox and the device-level protections you have enabled (such as a passcode, Face ID, or Touch ID).
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Third-Party Services</h2>
             <p className="text-gray-600 dark:text-neutral-400 mb-4">
-              Thea currently operates entirely on your device without integrating any third-party services for data collection or processing. All light measurements and app functionality are performed locally on your device.
+              Thea does not integrate any third-party services, SDKs, analytics, advertising, or tracking. The App contains no networking code and does not communicate with any backend, ours or anyone else&apos;s.
             </p>
-            <p className="text-gray-600 dark:text-neutral-400 mb-4">
-              In the future, we may introduce optional features that utilize third-party services (such as cloud-based AI analysis or advanced processing capabilities). If we do so, we will:
-            </p>
-            <ul className="list-disc pl-6 text-gray-600 dark:text-neutral-400 mb-4 space-y-2">
-              <li>Update this Privacy Policy with clear disclosure of what data is shared</li>
-              <li>Identify the specific third-party service providers</li>
-              <li>Make such features clearly opt-in where possible</li>
-              <li>Provide links to the privacy policies of any third-party services we integrate</li>
-            </ul>
           </section>
 
           <section className="mb-8">
@@ -98,6 +95,18 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Future Data Collection</h2>
+            <p className="text-gray-600 dark:text-neutral-400 mb-4">
+              If we ever introduce features that involve collecting, transmitting, or sharing data (for example, crash reporting, optional cloud sync, or third-party AI services), we will:
+            </p>
+            <ol className="list-decimal pl-6 text-gray-600 dark:text-neutral-400 mb-4 space-y-2">
+              <li>Update this Privacy Policy with clear disclosure of what data is collected, why, and with whom (if anyone) it is shared.</li>
+              <li>Update the App Store privacy disclosures (&quot;App Privacy&quot; labels) to reflect the new behavior before the change ships in a public release.</li>
+              <li>Where applicable, request your consent in-app at the time the new feature is first used.</li>
+            </ol>
+          </section>
+
+          <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Changes to This Privacy Policy</h2>
             <p className="text-gray-600 dark:text-neutral-400 mb-4">
               We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
@@ -109,9 +118,25 @@ export default function PrivacyPolicy() {
             <p className="text-gray-600 dark:text-neutral-400 mb-4">
               If you have any questions about this Privacy Policy or our data practices, please contact Thea Apps Inc. at:
             </p>
-            <p className="text-gray-600 dark:text-neutral-400">
-              Email: hello [at] thea [dot] app
-            </p>
+            <ul className="list-disc pl-6 text-gray-600 dark:text-neutral-400 space-y-2">
+              <li>
+                Email:{' '}
+                <ObfuscatedEmail
+                  user="hello"
+                  domain="thea.app"
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                />
+              </li>
+              <li>
+                Contact form:{' '}
+                <a
+                  href="/contact"
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  thea.app/contact
+                </a>
+              </li>
+            </ul>
           </section>
         </div>
       </div>

@@ -5,13 +5,13 @@ import { ThemeProvider } from '@/lib/ThemeContext';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://thea.app'),
-  title: 'Thea - Professional Light Meter App for iOS',
-  description: 'Achieve perfect exposure in any lighting condition with Thea, your professional light meter app for iOS.',
-  keywords: 'light meter, photography, exposure, iOS app, camera settings, studio lighting',
+  title: 'Thea - Free iPhone Light Meter with Shot Log and Rolls',
+  description: 'Thea is a free iPhone light meter with Shot Log, Rolls, and fast capture controls, including Action Button support on supported iPhones.',
+  keywords: 'light meter, shot log, film rolls, photography app, iOS app, action button',
   authors: [{ name: 'Thea Team' }],
   openGraph: {
-    title: 'Thea - Professional Light Meter App for iOS',
-    description: 'Achieve perfect exposure in any lighting condition with Thea, your professional light meter app for iOS.',
+    title: 'Thea - Free iPhone Light Meter with Shot Log and Rolls',
+    description: 'Thea is a free iPhone light meter with Shot Log, Rolls, and fast capture controls, including Action Button support on supported iPhones.',
     url: 'https://thea.app',
     siteName: 'Thea',
     images: [
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Thea - Professional Light Meter App for iOS',
-    description: 'Achieve perfect exposure in any lighting condition with Thea, your professional light meter app for iOS.',
+    title: 'Thea - Free iPhone Light Meter with Shot Log and Rolls',
+    description: 'Thea is a free iPhone light meter with Shot Log, Rolls, and fast capture controls, including Action Button support on supported iPhones.',
     images: ['/images/og-image.jpg'],
   },
 };

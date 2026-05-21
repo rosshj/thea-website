@@ -43,7 +43,7 @@ function HomeContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
           >
-            A beautiful light meter for everyone.
+            Meter precisely. Log every shot.
           </motion.h1>
           <motion.p 
             className="text-xl text-gray-600 dark:text-neutral-400 mb-10 max-w-2xl mx-auto"
@@ -51,7 +51,7 @@ function HomeContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
           >
-            Thea is a free, beautifully simple light meter for iPhone—made for every kind of photographer, anywhere you shoot.
+            Thea is a free iPhone light meter with Shot Log and roll-based organization, so every capture stays easy to track.
           </motion.p>
           <motion.p 
             className="text-xl text-gray-600 dark:text-neutral-400 mb-10 max-w-2xl mx-auto"
@@ -59,7 +59,7 @@ function HomeContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25, ease: 'easeOut' }}
           >
-            Now in testing!
+            Join the beta on TestFlight.
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6"
@@ -69,7 +69,7 @@ function HomeContent() {
           >
             {/* Download button - hidden in embed mode */}
             {!isEmbedded && (
-            <DownloadSheet className="inline-flex items-center px-8 py-3 text-base font-medium rounded-full text-white bg-gray-900 dark:bg-white dark:text-neutral-900 hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-[1.02] transition-all duration-200 min-h-[48px]">
+            <DownloadSheet className="inline-flex items-center px-6 py-3 text-base font-medium rounded-full text-white bg-gray-900 dark:bg-white dark:text-neutral-900 hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-[1.02] transition-all duration-200 min-h-[48px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
                   <g className="nc-icon-wrapper" fill="currentColor">
                     <path fillRule="evenodd" clipRule="evenodd" d="M13.3091 6.48971C13.8886 6.26249 14.614 6.00143 15.6913 6.00143C17.3749 6.00143 19.1523 6.89003 20.3404 8.35613L21.0976 9.29055L20.0406 9.86449C17.5093 11.2391 17.8608 14.8633 20.4912 15.8476L21.4953 16.2234L21.0506 17.199C20.5752 18.2418 20.3284 18.7499 19.6885 19.7119C18.7074 21.192 17.3565 22.9787 15.3958 22.997C14.1793 23.0084 13.2116 22.1656 12.0053 22.172C10.7909 22.1784 9.80329 23 8.57946 22.9999L8.57073 22.9999C6.64549 22.9829 5.31146 21.3315 4.3393 19.8664C1.80437 16.0461 1.46451 11.568 3.19812 8.92508C4.43251 7.04322 6.3164 6.00413 8.20878 6.00413C9.15354 6.00413 9.91949 6.26847 10.5172 6.47873C11.1502 6.70144 11.5462 6.84 11.9823 6.84C12.4376 6.84 12.7407 6.71256 13.3091 6.48971Z" fill="currentColor"></path>
@@ -93,7 +93,7 @@ function HomeContent() {
       <section id="features-grid" className="bg-white dark:bg-neutral-950 mb-10 pt-8 sm:pt-6 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-10"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10"
             variants={stagger}
             initial="initial"
             animate="animate"
@@ -108,7 +108,7 @@ function HomeContent() {
                   src="/images/home/bottom-controls.png"
                   alt="Camera settings display"
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -129,7 +129,7 @@ function HomeContent() {
                   src="/images/home/phone-pocket.png"
                   alt="Person with iPhone in pocket"
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -150,14 +150,77 @@ function HomeContent() {
                   src="/images/home/speed.png"
                   alt="Medium format film camera with waterfall view in viewfinder"
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
               <div className="p-8 gradient-box bg-white/10 flex-1">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Accurate readings</h3>
                 <p className="text-gray-700 dark:text-neutral-300">
-                  Thea uses your iPhone's camera to deliver real-time exposure readings—so you can shoot with confidence.
+                  Thea uses your iPhone&apos;s camera to deliver real-time exposure readings—so you can shoot with confidence.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="gradient-orange-pink rounded-2xl overflow-hidden flex flex-col"
+            >
+              <div className="relative aspect-square">
+                <Image
+                  src="/images/home/bottom-controls.png"
+                  alt="Shot Log details view"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8 gradient-box bg-white/10 flex-1">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Shot Log</h3>
+                <p className="text-gray-700 dark:text-neutral-300">
+                  Every capture is saved with key details, including settings, time, location, and notes.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="gradient-blue-yellow rounded-2xl overflow-hidden flex flex-col"
+            >
+              <div className="relative aspect-square">
+                <Image
+                  src="/images/home/phone-pocket.png"
+                  alt="Rolls organization view"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8 gradient-box bg-white/10 flex-1">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Rolls</h3>
+                <p className="text-gray-700 dark:text-neutral-300">
+                  Organize frames into film rolls and export roll metadata when you want to review or share your work.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="gradient-blue-purple rounded-2xl overflow-hidden flex flex-col"
+            >
+              <div className="relative aspect-square">
+                <Image
+                  src="/images/home/speed.png"
+                  alt="Quick capture controls in Thea"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8 gradient-box bg-white/10 flex-1">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Faster capture control</h3>
+                <p className="text-gray-700 dark:text-neutral-300">
+                  Swipe-to-lock keeps your meter readout fixed, and on supported iPhones the Action Button can add captures to Shot Log.
                 </p>
               </div>
             </motion.div>
@@ -264,15 +327,15 @@ function HomeContent() {
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-          <AnimatedGradient className="rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center">
-            <h2 className="text-4xl font-bold mb-8 text-white dark:text-gray-900">
+          <AnimatedGradient variant="yellow" className="rounded-3xl py-10 px-6 sm:px-8 lg:px-10 text-center">
+            <h2 className="text-4xl font-bold mb-8 text-gray-900">
               Try Thea—free on iOS.
             </h2>
-            <p className="text-xl text-gray-200 dark:text-gray-700 mb-6 max-w-2xl mx-auto">
-              A simple, beautiful light meter built for photographers of all levels. No ads, no cost—just a tool to help you shoot with confidence.
+            <p className="text-xl text-gray-800 mb-6 max-w-2xl mx-auto">
+              Meter with confidence, log every capture, and keep your frames organized in rolls from one simple app.
             </p>
-            <p className="text-xl text-gray-200 dark:text-gray-700 mb-4 max-w-2xl mx-auto">Now in testing!</p>
-            <DownloadSheet className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 hover:scale-[1.02] transition-all duration-200 min-h-[48px]">
+            <p className="text-xl text-gray-800 mb-4 max-w-2xl mx-auto">Join the beta on TestFlight.</p>
+            <DownloadSheet className="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 hover:scale-[1.02] transition-all duration-200 min-h-[48px]">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
                 <g className="nc-icon-wrapper" fill="currentColor">
                   <path fillRule="evenodd" clipRule="evenodd" d="M13.3091 6.48971C13.8886 6.26249 14.614 6.00143 15.6913 6.00143C17.3749 6.00143 19.1523 6.89003 20.3404 8.35613L21.0976 9.29055L20.0406 9.86449C17.5093 11.2391 17.8608 14.8633 20.4912 15.8476L21.4953 16.2234L21.0506 17.199C20.5752 18.2418 20.3284 18.7499 19.6885 19.7119C18.7074 21.192 17.3565 22.9787 15.3958 22.997C14.1793 23.0084 13.2116 22.1656 12.0053 22.172C10.7909 22.1784 9.80329 23 8.57946 22.9999L8.57073 22.9999C6.64549 22.9829 5.31146 21.3315 4.3393 19.8664C1.80437 16.0461 1.46451 11.568 3.19812 8.92508C4.43251 7.04322 6.3164 6.00413 8.20878 6.00413C9.15354 6.00413 9.91949 6.26847 10.5172 6.47873C11.1502 6.70144 11.5462 6.84 11.9823 6.84C12.4376 6.84 12.7407 6.71256 13.3091 6.48971Z" fill="currentColor"></path>
