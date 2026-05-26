@@ -86,7 +86,7 @@ function MainLayoutContent({ children }: { children: React.ReactNode }) {
                       <path d="M15.3653 3.793C16.0815 2.87425 16.5703 1.63176 16.373 0.305766C15.203 0.386016 13.89 1.07576 13.0913 2.0455C12.3668 2.92525 11.7675 4.231 12 5.5C13.2765 5.53975 14.598 4.77775 15.3653 3.793Z" fill="currentColor" data-color="color-2"></path>
                     </g>
                   </svg>
-                  Get the beta
+                  Get the app
                 </DownloadSheet>
               </div>
             </div>
@@ -230,7 +230,7 @@ function MainLayoutContent({ children }: { children: React.ReactNode }) {
                     <path d="M15.3653 3.793C16.0815 2.87425 16.5703 1.63176 16.373 0.305766C15.203 0.386016 13.89 1.07576 13.0913 2.0455C12.3668 2.92525 11.7675 4.231 12 5.5C13.2765 5.53975 14.598 4.77775 15.3653 3.793Z" fill="currentColor" data-color="color-2"></path>
                   </g>
                 </svg>
-                Get the beta
+                Get the app
               </DownloadSheet>
             </div>
             {/* Theme Switcher in mobile sidebar */}
@@ -260,7 +260,7 @@ function MainLayoutContent({ children }: { children: React.ReactNode }) {
                 <p className="text-xl text-gray-800 mb-6 max-w-2xl mx-auto">
                   Meter with confidence, log every capture, and keep your frames organized in rolls from one simple app.
                 </p>
-                <p className="text-xl text-gray-800 mb-4 max-w-2xl mx-auto">Join the beta on TestFlight.</p>
+                <p className="text-xl text-gray-800 mb-4 max-w-2xl mx-auto">Available now on the App Store.</p>
                 <DownloadSheet className="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 hover:scale-[1.02] transition-all duration-200 min-h-[48px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
                     <g className="nc-icon-wrapper" fill="currentColor">
@@ -268,7 +268,7 @@ function MainLayoutContent({ children }: { children: React.ReactNode }) {
                       <path d="M15.3653 3.793C16.0815 2.87425 16.5703 1.63176 16.373 0.305766C15.203 0.386016 13.89 1.07576 13.0913 2.0455C12.3668 2.92525 11.7675 4.231 12 5.5C13.2765 5.53975 14.598 4.77775 15.3653 3.793Z" fill="currentColor" data-color="color-2"></path>
                     </g>
                   </svg>
-                  Get the beta
+                  Get the app
                 </DownloadSheet>
               </AnimatedGradient>
             </div>

@@ -59,7 +59,7 @@ function HomeContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25, ease: 'easeOut' }}
           >
-            Join the beta on TestFlight.
+            Available now on the App Store.
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6"
@@ -76,7 +76,7 @@ function HomeContent() {
                     <path d="M15.3653 3.793C16.0815 2.87425 16.5703 1.63176 16.373 0.305766C15.203 0.386016 13.89 1.07576 13.0913 2.0455C12.3668 2.92525 11.7675 4.231 12 5.5C13.2765 5.53975 14.598 4.77775 15.3653 3.793Z" fill="currentColor" data-color="color-2"></path>
                   </g>
                 </svg>
-                Get the beta
+                Get the app
             </DownloadSheet>
             )}
             <ScrollButton
@@ -101,18 +101,18 @@ function HomeContent() {
           >
             <motion.div
               variants={fadeInUp}
-              className="gradient-orange-pink rounded-2xl overflow-hidden flex flex-col"
+              className="rounded-2xl overflow-hidden flex flex-col border border-gray-100 dark:border-white/[0.03]"
             >
               <div className="relative aspect-square">
                 <Image
-                  src="/images/home/bottom-controls.png"
-                  alt="Camera settings display"
+                  src="/images/home/intuitive-interface.png"
+                  alt="Thea light meter interface with aperture priority controls"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
-              <div className="p-8 gradient-box bg-white/10 flex-1">
+              <div className="p-8 flex-1 bg-gray-50 dark:bg-neutral-800/20">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">An intuitive interface</h3>
                 <p className="text-gray-700 dark:text-neutral-300">
                   No clutter. No confusion. Just a clean, minimal design that helps you focus on creating great photos.
@@ -122,18 +122,18 @@ function HomeContent() {
 
             <motion.div
               variants={fadeInUp}
-              className="gradient-blue-yellow rounded-2xl overflow-hidden flex flex-col"
+              className="rounded-2xl overflow-hidden flex flex-col border border-gray-100 dark:border-white/[0.03]"
             >
               <div className="relative aspect-square">
                 <Image
-                  src="/images/home/phone-pocket.png"
-                  alt="Person with iPhone in pocket"
+                  src="/images/home/light-meter-on-the-go.png"
+                  alt="Person putting iPhone with Thea into a pocket"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
-              <div className="p-8 gradient-box bg-white/10 flex-1">
+              <div className="p-8 flex-1 bg-gray-50 dark:bg-neutral-800/20">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">A meter wherever you go</h3>
                 <p className="text-gray-700 dark:text-neutral-300">
                   Your phone is always with you—so is Thea. Get quick, accurate readings anywhere you shoot.
@@ -143,18 +143,18 @@ function HomeContent() {
 
             <motion.div
               variants={fadeInUp}
-              className="gradient-blue-purple rounded-2xl overflow-hidden flex flex-col"
+              className="rounded-2xl overflow-hidden flex flex-col border border-gray-100 dark:border-white/[0.03]"
             >
               <div className="relative aspect-square">
                 <Image
-                  src="/images/home/speed.png"
-                  alt="Medium format film camera with waterfall view in viewfinder"
+                  src="/images/home/accurate-meter-readings.png"
+                  alt="Portrait with Thea speed meter reading overlay"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
-              <div className="p-8 gradient-box bg-white/10 flex-1">
+              <div className="p-8 flex-1 bg-gray-50 dark:bg-neutral-800/20">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Accurate readings</h3>
                 <p className="text-gray-700 dark:text-neutral-300">
                   Thea uses your iPhone&apos;s camera to deliver real-time exposure readings—so you can shoot with confidence.
@@ -164,18 +164,18 @@ function HomeContent() {
 
             <motion.div
               variants={fadeInUp}
-              className="gradient-orange-pink rounded-2xl overflow-hidden flex flex-col"
+              className="rounded-2xl overflow-hidden flex flex-col border border-gray-100 dark:border-white/[0.03]"
             >
               <div className="relative aspect-square">
                 <Image
-                  src="/images/home/bottom-controls.png"
-                  alt="Shot Log details view"
+                  src="/images/home/film-shot-log.png"
+                  alt="Shot Log entry showing camera, lens, film, and exposure details"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
-              <div className="p-8 gradient-box bg-white/10 flex-1">
+              <div className="p-8 flex-1 bg-gray-50 dark:bg-neutral-800/20">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Shot Log</h3>
                 <p className="text-gray-700 dark:text-neutral-300">
                   Every capture is saved with key details, including settings, time, location, and notes.
@@ -185,18 +185,18 @@ function HomeContent() {
 
             <motion.div
               variants={fadeInUp}
-              className="gradient-blue-yellow rounded-2xl overflow-hidden flex flex-col"
+              className="rounded-2xl overflow-hidden flex flex-col border border-gray-100 dark:border-white/[0.03]"
             >
               <div className="relative aspect-square">
                 <Image
-                  src="/images/home/phone-pocket.png"
-                  alt="Rolls organization view"
+                  src="/images/home/film-rolls.png"
+                  alt="Film roll with mapped frames and street photos"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
-              <div className="p-8 gradient-box bg-white/10 flex-1">
+              <div className="p-8 flex-1 bg-gray-50 dark:bg-neutral-800/20">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Rolls</h3>
                 <p className="text-gray-700 dark:text-neutral-300">
                   Organize frames into film rolls and export roll metadata when you want to review or share your work.
@@ -206,21 +206,21 @@ function HomeContent() {
 
             <motion.div
               variants={fadeInUp}
-              className="gradient-blue-purple rounded-2xl overflow-hidden flex flex-col"
+              className="rounded-2xl overflow-hidden flex flex-col border border-gray-100 dark:border-white/[0.03]"
             >
               <div className="relative aspect-square">
                 <Image
-                  src="/images/home/speed.png"
-                  alt="Quick capture controls in Thea"
+                  src="/images/home/profiles.png"
+                  alt="Shooting profiles for camera, lens, and film stock"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
-              <div className="p-8 gradient-box bg-white/10 flex-1">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Faster capture control</h3>
+              <div className="p-8 flex-1 bg-gray-50 dark:bg-neutral-800/20">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Profiles for your gear</h3>
                 <p className="text-gray-700 dark:text-neutral-300">
-                  Swipe-to-lock keeps your meter readout fixed, and on supported iPhones the Action Button can add captures to Shot Log.
+                  Save profiles for your cameras, lenses, and film stocks so readings always match the gear you&apos;re using.
                 </p>
               </div>
             </motion.div>
@@ -334,7 +334,7 @@ function HomeContent() {
             <p className="text-xl text-gray-800 mb-6 max-w-2xl mx-auto">
               Meter with confidence, log every capture, and keep your frames organized in rolls from one simple app.
             </p>
-            <p className="text-xl text-gray-800 mb-4 max-w-2xl mx-auto">Join the beta on TestFlight.</p>
+            <p className="text-xl text-gray-800 mb-4 max-w-2xl mx-auto">Available now on the App Store.</p>
             <DownloadSheet className="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 hover:scale-[1.02] transition-all duration-200 min-h-[48px]">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="mr-2">
                 <g className="nc-icon-wrapper" fill="currentColor">
@@ -342,7 +342,7 @@ function HomeContent() {
                   <path d="M15.3653 3.793C16.0815 2.87425 16.5703 1.63176 16.373 0.305766C15.203 0.386016 13.89 1.07576 13.0913 2.0455C12.3668 2.92525 11.7675 4.231 12 5.5C13.2765 5.53975 14.598 4.77775 15.3653 3.793Z" fill="currentColor" data-color="color-2"></path>
                 </g>
               </svg>
-              Get the beta
+              Get the app
             </DownloadSheet>
           </AnimatedGradient>
         </div>
